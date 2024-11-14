@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "JnZaPfLvYbf7+mgYkvTp6rj6fYr98R/IuULkV//aYCM=",
+  "Source": "SoftwareCompaniesManagement.Api",
+  "BasePath": "_content/SoftwareCompaniesManagement.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

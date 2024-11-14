@@ -1,0 +1,12 @@
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\bin\Debug\net8.0\SoftwareCompaniesManagement.Model.deps.json
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\bin\Debug\net8.0\SoftwareCompaniesManagement.Model.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\bin\Debug\net8.0\SoftwareCompaniesManagement.Model.pdb
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\obj\Debug\net8.0\SoftwareCompaniesManagement.Model.csproj.AssemblyReference.cache
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\obj\Debug\net8.0\SoftwareCompaniesManagement.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\obj\Debug\net8.0\SoftwareCompaniesManagement.Model.AssemblyInfoInputs.cache
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\obj\Debug\net8.0\SoftwareCompaniesManagement.Model.AssemblyInfo.cs
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\obj\Debug\net8.0\SoftwareCompaniesManagement.Model.csproj.CoreCompileInputs.cache
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\obj\Debug\net8.0\SoftwareCompaniesManagement.Model.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\obj\Debug\net8.0\refint\SoftwareCompaniesManagement.Model.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\obj\Debug\net8.0\SoftwareCompaniesManagement.Model.pdb
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\obj\Debug\net8.0\ref\SoftwareCompaniesManagement.Model.dll
