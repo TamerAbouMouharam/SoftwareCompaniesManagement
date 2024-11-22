@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using SoftwareCompaniesManagement.Model.ValuesCheck;
 
 namespace SoftwareCompaniesManagement.Model;
 
@@ -16,7 +17,7 @@ public class Task
 
     public int Complexity { get; set; }
 
-    public required string Status { get; set; }
+    public required Status Status { get; set; }
 
     public DateOnly StartDate { get; set; }
 

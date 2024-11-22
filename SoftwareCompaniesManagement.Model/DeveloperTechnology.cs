@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using SoftwareCompaniesManagement.Model.ValuesCheck;
 
 namespace SoftwareCompaniesManagement.Model;
 
@@ -16,7 +17,7 @@ public class DeveloperTechnology
 
     public Technology Technology { get; set; } = null!;
 
-    public required string ExperienceLevel { get; set; }
+    public required ExperienceLevel ExperienceLevel { get; set; }
 
     public double ExperienceYears { get; set; }
 

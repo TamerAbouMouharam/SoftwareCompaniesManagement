@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using SoftwareCompaniesManagement.Model.ValuesCheck;
 
 namespace SoftwareCompaniesManagement.Model;
 
@@ -12,7 +13,7 @@ public class Employee
 
     public decimal Salary { get; set; }
 
-    public required string Role { get; set; }
+    public required Role Role { get; set; }
 
     public DateOnly Birthdate { get; set; }
 

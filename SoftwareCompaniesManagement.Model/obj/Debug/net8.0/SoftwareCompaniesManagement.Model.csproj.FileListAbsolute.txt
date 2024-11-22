@@ -10,3 +10,4 @@ C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesM
 C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\obj\Debug\net8.0\refint\SoftwareCompaniesManagement.Model.dll
 C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\obj\Debug\net8.0\SoftwareCompaniesManagement.Model.pdb
 C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\obj\Debug\net8.0\ref\SoftwareCompaniesManagement.Model.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Model\obj\Debug\net8.0\SoftwareCompaniesManagement.Model.sourcelink.json
