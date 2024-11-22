@@ -1,0 +1,16 @@
+POST http://localhost:5243/Accounts/CompanyAccount
+Content-Type: application/json
+
+{
+    "AccountDto": {
+        "Username": "user1",
+        "Password": "1234"
+    },
+
+    "CompanyDto": {
+        "CompanyName": "com1"
+    }
+}
+
+
+

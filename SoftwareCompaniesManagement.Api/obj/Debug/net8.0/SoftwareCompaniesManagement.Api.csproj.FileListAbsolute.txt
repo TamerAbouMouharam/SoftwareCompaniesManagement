@@ -128,3 +128,7 @@ C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesM
 C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\obj\Debug\net8.0\SoftwareCompaniesManagement.Api.pdb
 C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\obj\Debug\net8.0\SoftwareCompaniesManagement.Api.genruntimeconfig.cache
 C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\obj\Debug\net8.0\ref\SoftwareCompaniesManagement.Api.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\obj\Debug\net8.0\SoftwareCompaniesManagement.Api.sourcelink.json
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\SoftwareCompaniesManagement.Api.staticwebassets.endpoints.json
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\obj\Debug\net8.0\staticwebassets\msbuild.SoftwareCompaniesManagement.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

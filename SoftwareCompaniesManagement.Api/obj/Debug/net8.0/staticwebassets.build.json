@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "JnZaPfLvYbf7+mgYkvTp6rj6fYr98R/IuULkV//aYCM=",
+  "Hash": "g/+t/sFHICaQvzq8Lylog7OSiFXz0dVspby+DGiWR/g=",
   "Source": "SoftwareCompaniesManagement.Api",
   "BasePath": "_content/SoftwareCompaniesManagement.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

@@ -663,7 +663,10 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.10"
         },
         "runtime": {
-          "SoftwareCompaniesManagement.Model.dll": {}
+          "SoftwareCompaniesManagement.Model.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
