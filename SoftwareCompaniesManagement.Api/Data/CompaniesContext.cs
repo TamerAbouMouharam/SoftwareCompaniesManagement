@@ -5,28 +5,23 @@ namespace SoftwareCompaniesManagement.Api.Data;
 
 public class CompaniesContext(DbContextOptions<CompaniesContext> options) : DbContext(options)
 {
-    public DbSet<Company> Companies { get; set; }
+    public DbSet<Company> Companies { get; set; } = null!;
 
-    public DbSet<Account> Accounts { get; set; }
+    public DbSet<Account> Accounts { get; set; } = null!;
 
-    public DbSet<Developer> Developers { get; set; }
+    public DbSet<Developer> Developers { get; set; } = null!;
 
-    public DbSet<DeveloperProject> DeveloperProjects { get; set; }
+    public DbSet<DeveloperProject> DeveloperProjects { get; set; } = null!;
 
-    public DbSet<DeveloperTechnology> DeveloperTechnologies { get; set; }
+    public DbSet<DeveloperTechnology> DeveloperTechnologies { get; set; } = null!;
 
-    public DbSet<Employee> Employees { get; set; }
+    public DbSet<Employee> Employees { get; set; } = null!;
 
-    public DbSet<Project> Projects { get; set; }
+    public DbSet<Project> Projects { get; set; } = null!;
 
-    public DbSet<ProjectTechnology> ProjectTechnologies { get; set; }
+    public DbSet<ProjectTechnology> ProjectTechnologies { get; set; } = null!;
 
-    public DbSet<SoftwareCompaniesManagement.Model.Task> Tasks { get; set; }
+    public DbSet<SoftwareCompaniesManagement.Model.Task> Tasks { get; set; } = null!;
     
-    public DbSet<Technology> Technologies { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlite();
-    }
+    public DbSet<Technology> Technologies { get; set; } = null!;
 }

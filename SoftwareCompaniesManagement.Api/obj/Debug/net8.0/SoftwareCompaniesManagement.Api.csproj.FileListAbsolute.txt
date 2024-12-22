@@ -132,3 +132,16 @@ C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesM
 C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\SoftwareCompaniesManagement.Api.staticwebassets.endpoints.json
 C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\obj\Debug\net8.0\staticwebassets\msbuild.SoftwareCompaniesManagement.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\obj\Debug\net8.0\SoftwareCompaniesManagement.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\MinimalApis.Extensions.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\MiniValidation.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Api\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
