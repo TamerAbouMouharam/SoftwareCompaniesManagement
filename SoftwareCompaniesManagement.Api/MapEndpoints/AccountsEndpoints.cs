@@ -33,6 +33,23 @@ public static class AccountsEndpoints
             {
                 return Results.Ok(account_mapper.Map<AccountDto>(account));
             }
+        }).WithName("accountGET");
+
+        accountsGroup.MapPost("", (CompaniesContext dbContext, CreateAccountDto accountDto) => 
+        {
+            var account = account_mapper.Map<Account>(accountDto);
+
+            if(dbContext.Accounts.Count(account_ => account_.Username == account.Username) == 0)
+            {
+                dbContext.Accounts.Add(account);
+                dbContext.SaveChanges();
+
+                return Results.CreatedAtRoute("accountGET", new { id = account.Id }, account_mapper.Map<AccountDto>(account));
+            }
+            else
+            {
+                return Results.BadRequest("Account already exists");
+            }
         });
 
         return accountsGroup;

@@ -2,7 +2,7 @@ POST http://localhost:5243/Accounts
 Content-Type: application/json
 
 {
-    "Username": "Tamer",
+    "Username": "Tamer2",
     "Password": "12345678"
 }
 
