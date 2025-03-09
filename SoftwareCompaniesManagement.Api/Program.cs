@@ -11,6 +11,8 @@ string connection_string = builder.Configuration.GetConnectionString("db_source"
 
 builder.Services.AddSqlite<CompaniesContext>(connection_string);
 
+builder.Services.AddDataProtection();
+
 var app = builder.Build();
 
 app.MapAccountsEndpoints();

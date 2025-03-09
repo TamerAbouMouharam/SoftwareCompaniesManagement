@@ -4,6 +4,8 @@ using SoftwareCompaniesManagement.Api.DTO.UpdateDto;
 using SoftwareCompaniesManagement.Api.Data;
 using SoftwareCompaniesManagement.Model;
 using AutoMapper;
+using SoftwareCompaniesManagement.Api.DTO;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace SoftwareCompaniesManagement.Api.MapEndpoints;
 
@@ -49,6 +51,32 @@ public static class AccountsEndpoints
             else
             {
                 return Results.BadRequest("Account already exists");
+            }
+        });
+
+        accountsGroup.MapPost("login", (HttpContext httpContext, CompaniesContext dbContext, IDataProtectionProvider protectionProvider, LoginDto login) => 
+        {
+            var account = dbContext.Accounts.Where(account_ => account_.Username == login.Username && account_.Password == login.Password).FirstOrDefault();
+
+            if(account is null)
+            {
+                return Results.BadRequest("Wrong username or password.");
+            }
+            else
+            {
+                var username = account.Username;
+
+                var password = account.Password;
+
+                var protector = protectionProvider.CreateProtector("Authentication");
+
+                var authCookiePayload = $"username:{username};password:{password};login:1";
+
+                authCookiePayload = protector.Protect(authCookiePayload);
+
+                httpContext.Response.Headers["set-cookie"] = $"auth={authCookiePayload}";
+
+                return Results.Ok("Logged in");
             }
         });
 

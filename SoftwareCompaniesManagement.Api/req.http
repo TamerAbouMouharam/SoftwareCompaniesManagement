@@ -1,9 +1,9 @@
-POST http://localhost:5243/Accounts
+POST http://localhost:5243/Accounts/login
 Content-Type: application/json
 
 {
-    "Username": "Tamer3",
-    "Password": "12345678#"
+    "Username": "New",
+    "Password": "12345678"
 }
 
 ###
