@@ -59,4 +59,27 @@ static class Check
             }
         } 
     }
+
+    public static bool LoggedIn(HttpContext context, IDataProtectionProvider protectionProvider)
+    {
+        var authCookie = context.Request.Headers["cookie"].FirstOrDefault(cookie => cookie!.StartsWith("auth"));
+
+        if(authCookie is null)
+        {
+            return false;
+        }
+        else
+        {
+            var loginState = authCookie.Split("=").Last().Split(";").First(field => field.StartsWith("login")).Split(":").Last();
+
+            if(loginState == "1")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
 }
