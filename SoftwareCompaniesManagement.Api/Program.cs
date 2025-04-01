@@ -12,11 +12,14 @@ string connection_string = builder.Configuration.GetConnectionString("db_source"
 builder.Services.AddSqlite<CompaniesContext>(connection_string);
 
 builder.Services.AddDataProtection();
+builder.Services.AddCors(policies => policies.AddPolicy("AnyCORS", policy => policy.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod().AllowCredentials()));
 
 var app = builder.Build();
 
 app.MapAccountsEndpoints();
 app.MapCompaniesEndpoints();
+
+app.UseCors("AnyCORS");
 
 var scope = app.Services.CreateScope();
 

@@ -38,7 +38,7 @@ public static class AccountsEndpoints
             }
         }).WithName("accountGET");
 
-        accountsGroup.MapPost("", (CompaniesContext dbContext, CreateAccountDto accountDto) => 
+        accountsGroup.MapPost("create", (CompaniesContext dbContext, CreateAccountDto accountDto) => 
         {
             var account = account_mapper.Map<Account>(accountDto);
 
@@ -105,9 +105,7 @@ public static class AccountsEndpoints
                 var authCookiePayload = $"username:{username};password:{password};role:{role};login:1";
                 authCookiePayload = protector.Protect(authCookiePayload);
 
-                httpContext.Response.Headers["set-cookie"] = $"auth={authCookiePayload}";
-
-                return Results.Ok("Logged in");
+                return Results.Ok(authCookiePayload);
             }
         });
 

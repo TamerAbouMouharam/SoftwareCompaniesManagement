@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.DataProtection;
 
-namespace SoftwareCompaniesManagement.Api.MapEndpoints.RoleCheck;
+namespace SoftwareCompaniesManagement.Api.MapEndpoints.CookieManagement;
 
-static class Check
+static class UserCheck
 {
     public static bool RoleCheck(HttpContext context, IDataProtectionProvider protectionProvider, string role)
     {
