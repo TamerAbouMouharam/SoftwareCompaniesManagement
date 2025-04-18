@@ -10,7 +10,7 @@ public static class CompaniesEndpoints
 {
     public static RouteGroupBuilder MapCompaniesEndpoints(this WebApplication app)
     {
-        var mapping_configuration = new MapperConfiguration(cfg =>
+        var mapperConfiguration = new MapperConfiguration(cfg =>
         {
             cfg.CreateMap<Company, CompanyDto>();
             cfg.CreateMap<Company, CreateCompanyDto>();
@@ -18,7 +18,7 @@ public static class CompaniesEndpoints
             cfg.CreateMap<CreateCompanyDto, Company>();
         });
 
-        var companies_mapper = mapping_configuration.CreateMapper();
+        var companiesMapper = mapperConfiguration.CreateMapper();
 
         var companiesGroup = app.MapGroup("companies").WithParameterValidation();
 
@@ -32,18 +32,18 @@ public static class CompaniesEndpoints
             }
             else
             {
-                return Results.Ok(companies_mapper.Map<CompanyDto>(company));
+                return Results.Ok(companiesMapper.Map<CompanyDto>(company));
             }
         }).WithName("companyGET");
 
         companiesGroup.MapPost("", (CompaniesContext dbContext, CreateCompanyDto companyDto) =>
         {
-            var company = companies_mapper.Map<Company>(companyDto);
+            var company = companiesMapper.Map<Company>(companyDto);
 
             dbContext.Companies.Add(company);
             dbContext.SaveChanges();
 
-            return Results.CreatedAtRoute("companyGET", new { id = company.Id }, companies_mapper.Map<CompanyDto>(company));
+            return Results.CreatedAtRoute("companyGET", new { id = company.Id }, companiesMapper.Map<CompanyDto>(company));
         });
 
         return companiesGroup;

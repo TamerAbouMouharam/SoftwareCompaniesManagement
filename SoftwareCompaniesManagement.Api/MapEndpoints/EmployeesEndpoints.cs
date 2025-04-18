@@ -12,7 +12,7 @@ public static class EmployeesEndpoints
 {
     public static RouteGroupBuilder MapEmployeesEndpoints(this WebApplication app)
     {
-        var employeesGroup = app.MapGroup("employees");
+        var employeesGroup = app.MapGroup("companies/{companyId}/employees");
 
         var mapperConfiguration = new MapperConfiguration(cfg => 
         {
@@ -24,59 +24,22 @@ public static class EmployeesEndpoints
 
         var employeeMapper = mapperConfiguration.CreateMapper();
 
-        employeesGroup.MapGet("all", (HttpContext httpContext, CompaniesContext dbContext, IDataProtectionProvider protectionProvider) => 
+        employeesGroup.MapGet("", (CompaniesContext dbContext, int companyId) =>
         {
-            if(UserCheck.RoleCheck(httpContext, protectionProvider, "employeemanager"))
-            {
-                var username = CookieFields.GetField(httpContext, protectionProvider, "username");
+            var employees = dbContext.Employees.Where(employee => employee.CompanyId == companyId).ToList();
 
-                var accountId = dbContext.Accounts.Where(account => account.Username == username).First().Id;
+            var employeeDTOs = employees.Select(employee => employeeMapper.Map<EmployeeDto>(employee)).ToList();
 
-                var companyId = dbContext.Employees.Where(employee => employee.AccountId == accountId).First().CompanyId;
-
-                return Results.Ok(dbContext.Employees.Where(employee => employee.CompanyId == companyId).Select(employee => employeeMapper.Map<Employee, EmployeeDto>(employee)).ToList());
-            }
-            else
-            {
-                return Results.StatusCode(401);
-            }
+            return Results.Ok(employeeDTOs);
         });
 
-        employeesGroup.MapGet("{id}", (HttpContext httpContext, CompaniesContext dbContext, IDataProtectionProvider protectionProvider, int id) =>
+        employeesGroup.MapGet("{id}", (CompaniesContext dbContext, int companyId, int id) =>
         {
-            if(UserCheck.RoleCheck(httpContext, protectionProvider, "employeemanager"))
-            {
-                var username = CookieFields.GetField(httpContext, protectionProvider, "username");
+            var employee = dbContext.Employees.Find(id);
 
-                var accountId = dbContext.Accounts.Where(account => account.Username == username).First().Id;
+            var employeeDto = employeeMapper.Map<EmployeeDto>(employee);
 
-                var companyId = dbContext.Employees.Where(employee => employee.AccountId == accountId).First().CompanyId;
-
-                var employee = dbContext.Employees.Where(employee => employee.Id == id && employee.CompanyId == companyId).First();
-
-                return Results.Ok(employeeMapper.Map<Employee, EmployeeDto>(employee));
-            }
-            else
-            {
-                return Results.StatusCode(401);
-            }
-        }).WithName("GetEmployee");
-
-        employeesGroup.MapPost("", (HttpContext httpContext, CompaniesContext dbContext, IDataProtectionProvider protectionProvider, CreateEmployeeDto employeeDto) =>
-        {
-            var employee = employeeMapper.Map<CreateEmployeeDto, Employee>(employeeDto);
-
-            if(UserCheck.RoleCheck(httpContext, protectionProvider, "employeemanager") || UserCheck.RoleCheck(httpContext, protectionProvider, "employee"))
-            {
-                dbContext.Employees.Add(employee);
-                dbContext.SaveChanges();
-
-                return Results.CreatedAtRoute("GetEmployee", new { id = employee.Id }, employeeMapper.Map<Employee, EmployeeDto>(employee));
-            }
-            else
-            {
-                return Results.StatusCode(401);
-            }
+            return Results.Ok(employeeDto);
         });
 
         return employeesGroup;
