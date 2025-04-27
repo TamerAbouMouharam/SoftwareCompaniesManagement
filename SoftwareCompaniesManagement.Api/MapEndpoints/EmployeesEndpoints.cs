@@ -5,6 +5,8 @@ using SoftwareCompaniesManagement.Model;
 using AutoMapper;
 using SoftwareCompaniesManagement.Api.DTO.GetDto;
 using SoftwareCompaniesManagement.Api.DTO.CreateDto;
+using static SoftwareCompaniesManagement.Api.MapEndpoints.Groups;
+using Microsoft.EntityFrameworkCore;
 
 namespace SoftwareCompaniesManagement.Api.MapEndpoints;
 
@@ -24,7 +26,7 @@ public static class EmployeesEndpoints
 
         var employeeMapper = mapperConfiguration.CreateMapper();
 
-        employeesGroup.MapGet("", (CompaniesContext dbContext, int companyId) =>
+        Employees.MapGet("", (CompaniesContext dbContext, int companyId) =>
         {
             var employees = dbContext.Employees.Where(employee => employee.CompanyId == companyId).ToList();
 
@@ -33,13 +35,30 @@ public static class EmployeesEndpoints
             return Results.Ok(employeeDTOs);
         });
 
-        employeesGroup.MapGet("{id}", (CompaniesContext dbContext, int companyId, int id) =>
+        Employees.MapGet("{employeeId}", (CompaniesContext dbContext, int companyId, int employeeId) =>
         {
-            var employee = dbContext.Employees.Find(id);
+            var employee = dbContext.Employees.Find(employeeId);
 
             var employeeDto = employeeMapper.Map<EmployeeDto>(employee);
 
-            return Results.Ok(employeeDto);
+            if(employee is not null)
+            {
+                return Results.Ok(employeeDto);
+            }
+            else
+            {
+                return Results.NotFound("There is no such employee");
+            }
+        }).WithName("GET_Employee");
+
+        Employees.MapPost("", (CompaniesContext dbContext, int companyId, CreateEmployeeDto employeeDto) => 
+        {
+            var employee = employeeMapper.Map<Employee>(employeeDto);
+
+            dbContext.Employees.Add(employee);
+            dbContext.SaveChanges();
+
+            return Results.CreatedAtRoute("GET_Employee", new { employeeId = employee.Id }, employeeMapper.Map<EmployeeDto>(employee));
         });
 
         return employeesGroup;

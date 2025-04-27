@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareCompaniesManagement
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareCompaniesManagement.Api", "SoftwareCompaniesManagement.Api\SoftwareCompaniesManagement.Api.csproj", "{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareCompaniesManagement.Authorization", "SoftwareCompaniesManagement.Authorization\SoftwareCompaniesManagement.Authorization.csproj", "{FAE94CBB-5C35-4654-A358-5536B3BB0CEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAE94CBB-5C35-4654-A358-5536B3BB0CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAE94CBB-5C35-4654-A358-5536B3BB0CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAE94CBB-5C35-4654-A358-5536B3BB0CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAE94CBB-5C35-4654-A358-5536B3BB0CEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
