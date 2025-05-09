@@ -1,0 +1,9 @@
+POST http://localhost:5290/signup
+Content-Type: application/json
+
+{
+    "Username": "Tamer",
+    "Password": "1234",
+    "Role": "employee",
+    "CompanyId": 1
+}

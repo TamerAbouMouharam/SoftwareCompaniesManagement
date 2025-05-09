@@ -14,7 +14,7 @@ builder.Services.AddSqlite<CompaniesContext>(connection_string);
 builder.Services.AddDataProtection();
 builder.Services.AddCors(policies => 
 {
-    policies.AddPolicy("AnyCORS", policy => 
+    policies.AddPolicy("AllowedClientCORS", policy => 
     {
         policy.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod().AllowCredentials();
     });
@@ -24,12 +24,10 @@ var app = builder.Build();
 
 app.ProvideApp();
 
-app.UseCors("AnyCORS");
+app.UseCors("AllowedClientCORS");
 
-var scope = app.Services.CreateScope();
-
+using var scope = app.Services.CreateScope();
 var dbContext = scope.ServiceProvider.GetRequiredService<CompaniesContext>();
-
 dbContext.Database.Migrate();
 
 app.Run();

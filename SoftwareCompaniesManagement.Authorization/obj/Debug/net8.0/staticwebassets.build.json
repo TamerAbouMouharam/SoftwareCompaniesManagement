@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "k91YfFyCILUqVycEz02l/CYnWfYKGRibi65OgeqxFsU=",
+  "Source": "SoftwareCompaniesManagement.Authorization",
+  "BasePath": "_content/SoftwareCompaniesManagement.Authorization",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
