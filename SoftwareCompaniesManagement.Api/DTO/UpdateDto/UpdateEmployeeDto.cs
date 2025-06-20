@@ -16,13 +16,14 @@ public record class UpdateEmployeeDto(
     decimal Salary,
 
     [Required]
-    Role Role,
+    [AllowedValues("employee", "project_manager", "employee_manager")]
+    string Role,
 
     [Required]
-    DateOnly Birthdate,
+    DateTime Birthdate,
 
     [Required]
-    DateOnly HiringDate,
+    DateTime HiringDate,
 
     [Required]
     int AccountId,

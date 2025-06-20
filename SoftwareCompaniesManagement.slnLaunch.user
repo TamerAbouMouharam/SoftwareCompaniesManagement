@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Start",
+    "Projects": [
+      {
+        "Path": "SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      },
+      {
+        "Path": "SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      }
+    ]
+  }
+]

@@ -7,7 +7,7 @@ public record class DeveloperTechnologyDto(
 
     int TechnologyId,
 
-    ExperienceLevel ExperienceLevel,
+    string ExperienceLevel,
 
     double ExperienceYears,
 

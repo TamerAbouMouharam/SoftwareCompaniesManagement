@@ -34,7 +34,7 @@ public static class CompaniesEndpoints
             {
                 return Results.Ok(companiesMapper.Map<CompanyDto>(company));
             }
-        }).WithName("companyGET");
+        }).WithName("GetCompany");
 
         companiesGroup.MapPost("", (CompaniesContext dbContext, CreateCompanyDto companyDto) =>
         {
@@ -43,7 +43,7 @@ public static class CompaniesEndpoints
             dbContext.Companies.Add(company);
             dbContext.SaveChanges();
 
-            return Results.CreatedAtRoute("companyGET", new { id = company.Id }, companiesMapper.Map<CompanyDto>(company));
+            return Results.CreatedAtRoute("GetCompany", new { id = company.Id }, companiesMapper.Map<CompanyDto>(company));
         });
 
         return companiesGroup;

@@ -15,13 +15,14 @@ public record class CreateProjectDto(
     int ProjectPoints,
 
     [Required]
-    Status Status,
+    [AllowedValues("created", "started", "done", "canceled")]
+    string Status,
 
     [Required]
-    DateOnly StartDate,
+    DateTime StartDate,
 
     [Required]
-    DateOnly EndDate,
+    DateTime EndDate,
 
     [Required]
     int ManagerId,

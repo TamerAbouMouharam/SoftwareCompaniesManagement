@@ -18,13 +18,14 @@ public record class UpdateTaskDto(
     int Complexity,
 
     [Required]
-    Status Status,
+    [AllowedValues("created", "started", "done", "canceled")]
+    string Status,
 
     [Required]
-    DateOnly StartDate,
+    DateTime StartDate,
 
     [Required]
-    DateOnly EndDate,
+    DateTime EndDate,
 
     [Required]
     double EstimateEffort,

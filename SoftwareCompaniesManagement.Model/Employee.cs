@@ -13,11 +13,12 @@ public class Employee
 
     public decimal Salary { get; set; }
 
-    public required Role Role { get; set; }
+    [AllowedValues("employee", "project_manager", "employee_manager")]
+    public required string Role { get; set; }
 
-    public DateOnly Birthdate { get; set; }
+    public DateTime Birthdate { get; set; }
 
-    public DateOnly HiringDate { get; set; }
+    public DateTime HiringDate { get; set; }
     
     [ForeignKey("Account")]
     public int AccountId { get; set; }

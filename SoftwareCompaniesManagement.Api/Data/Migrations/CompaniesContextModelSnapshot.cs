@@ -52,7 +52,7 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateOnly?>("EstablishDate")
+                    b.Property<DateTime?>("EstablishDate")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -71,7 +71,7 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                     b.Property<int>("AccountId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateOnly>("Birthdate")
+                    b.Property<DateTime>("Birthdate")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("CompanyId")
@@ -81,7 +81,7 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateOnly>("HiringDate")
+                    b.Property<DateTime>("HiringDate")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Salary")
@@ -122,8 +122,9 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                     b.Property<int>("TechnologyId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ExperienceLevel")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("ExperienceLevel")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<double>("ExperienceYears")
                         .HasColumnType("REAL");
@@ -147,7 +148,7 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                     b.Property<int>("AccountId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateOnly>("Birthdate")
+                    b.Property<DateTime>("Birthdate")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("CompanyId")
@@ -157,11 +158,12 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateOnly>("HiringDate")
+                    b.Property<DateTime>("HiringDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Role")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<decimal>("Salary")
                         .HasColumnType("TEXT");
@@ -187,7 +189,7 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateOnly>("EndDate")
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("ManagerId")
@@ -200,11 +202,12 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                     b.Property<int>("ProjectPoints")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateOnly>("StartDate")
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -248,7 +251,7 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                     b.Property<int?>("DeveloperId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateOnly>("EndDate")
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("TEXT");
 
                     b.Property<double>("EstimateEffort")
@@ -260,11 +263,12 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                     b.Property<int>("ProjectId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateOnly>("StartDate")
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("TechnologyId")
                         .HasColumnType("INTEGER");

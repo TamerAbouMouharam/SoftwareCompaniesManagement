@@ -7,9 +7,9 @@ public record class DeveloperDto(
 
     decimal Salary,
 
-    DateOnly Birthdate,
+    DateTime Birthdate,
 
-    DateOnly HiringDate,
+    DateTime HiringDate,
 
     int AccountId,
 

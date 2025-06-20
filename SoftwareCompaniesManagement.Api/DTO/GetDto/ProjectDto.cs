@@ -11,11 +11,11 @@ public record class ProjectDto(
 
     int ProjectPoints,
 
-    Status Status,
+    string Status,
 
-    DateOnly StartDate,
+    DateTime StartDate,
 
-    DateOnly EndDate,
+    DateTime EndDate,
 
     int ManagerId,
 

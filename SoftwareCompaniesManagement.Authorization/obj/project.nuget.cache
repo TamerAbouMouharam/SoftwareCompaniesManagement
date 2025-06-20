@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sZKV991/290=",
+  "dgSpecHash": "PKpW70qLNTw=",
   "success": true,
   "projectFilePath": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj",
   "expectedPackageFiles": [
@@ -61,7 +61,10 @@
     "C:\\Users\\Tamer\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.1.2\\microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
     "C:\\Users\\Tamer\\.nuget\\packages\\microsoft.net.http.headers\\2.3.0\\microsoft.net.http.headers.2.3.0.nupkg.sha512",
     "C:\\Users\\Tamer\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\Tamer\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\Tamer\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Tamer\\.nuget\\packages\\minimalapis.extensions\\0.11.0\\minimalapis.extensions.0.11.0.nupkg.sha512",
+    "C:\\Users\\Tamer\\.nuget\\packages\\minivalidation\\0.8.0\\minivalidation.0.8.0.nupkg.sha512",
     "C:\\Users\\Tamer\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\Tamer\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.6\\sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "C:\\Users\\Tamer\\.nuget\\packages\\sqlitepclraw.core\\2.1.6\\sqlitepclraw.core.2.1.6.nupkg.sha512",

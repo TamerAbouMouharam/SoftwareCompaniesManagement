@@ -13,11 +13,11 @@ public record class TaskDto(
 
     int Complexity,
 
-    Status Status,
+    string Status,
 
-    DateOnly StartDate,
+    DateTime StartDate,
 
-    DateOnly EndDate,
+    DateTime EndDate,
 
     double EstimateEffort,
 

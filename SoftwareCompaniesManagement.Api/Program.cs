@@ -22,12 +22,14 @@ builder.Services.AddCors(policies =>
 
 var app = builder.Build();
 
-app.ProvideApp();
-
 app.UseCors("AllowedClientCORS");
 
 using var scope = app.Services.CreateScope();
 var dbContext = scope.ServiceProvider.GetRequiredService<CompaniesContext>();
 dbContext.Database.Migrate();
+
+app.MapAccountsEndpoints();
+app.MapCompaniesEndpoints();
+app.MapEmployeesEndpoints();
 
 app.Run();

@@ -5,9 +5,6 @@ namespace SoftwareCompaniesManagement.Api.DTO.CreateDto;
 
 public record class CreateEmployeeDto(
     [Required]
-    int Id,
-
-    [Required]
     [StringLength(30)]
     string FullName,
 
@@ -16,13 +13,14 @@ public record class CreateEmployeeDto(
     decimal Salary,
 
     [Required]
-    Role Role,
+    [AllowedValues("employee", "project_manager", "employee_manager")]
+    string Role,
 
     [Required]
-    DateOnly Birthdate,
+    DateTime Birthdate,
 
     [Required]
-    DateOnly HiringDate,
+    DateTime HiringDate,
 
     [Required]
     int AccountId,

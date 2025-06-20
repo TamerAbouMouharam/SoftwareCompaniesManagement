@@ -7,6 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using SoftwareCompaniesManagement.Authorization.DTO;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -87,13 +88,14 @@ app.MapPost("login", (AccountsContext dbContext, LoginDto dto) =>
 
     if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.Password) || !user.IsActive)
     {
-        return Results.Unauthorized();
+        var accountId = user.Id;
+        return Results.Problem($"[Account ID: ({accountId})]", "There is a problem with account", StatusCodes.Status401Unauthorized);
     }
 
     var token = GenerateToken(user);
 
     return Results.Ok(new { Token = token, CookieData = new { role = user.Role, companyId = user.CompanyId } });
-});
+}).WithParameterValidation();
 
 app.MapPost("signup", (AccountsContext dbContext, SignupDto dto) => 
 {
@@ -116,17 +118,18 @@ app.MapPost("signup", (AccountsContext dbContext, SignupDto dto) =>
     dbContext.SaveChanges();
 
     return Results.Ok("Account successfully created!");
-});
+}).WithParameterValidation();
 
 app.MapPost("{accountId}/activate", (AccountsContext dbContext, HttpContext httpContext, int accountId) => 
 {
     var token = httpContext.Request.Headers.Cookie.FirstOrDefault(cookie => cookie.StartsWith("token")).Split('=').Last();
-    var sentCompanyId = httpContext.Request.Headers.Cookie.FirstOrDefault(cookie => cookie.StartsWith("company_id")).Split('=').Last();
+
+    var accountCompanyId = dbContext.Accounts.Find(accountId).CompanyId;
 
     var role = DecodeToken(token).FindFirst("role").Value;
     var companyId = DecodeToken(token).FindFirst("companyId").Value;
 
-    if(token is null || role != "company" || role != "employee_manager" || companyId != sentCompanyId)
+    if(token is null || role != "company" && role != "employee_manager" || int.Parse(companyId) != accountCompanyId)
     {
         return Results.Unauthorized();
     }
@@ -135,6 +138,7 @@ app.MapPost("{accountId}/activate", (AccountsContext dbContext, HttpContext http
         var account = dbContext.Accounts.FirstOrDefault(u => u.Id == accountId);
         account.IsActive = true;
         dbContext.SaveChanges();
+
         return Results.Ok("Account successfully activated!");
     }
 });

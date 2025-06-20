@@ -5,7 +5,6 @@ using SoftwareCompaniesManagement.Model;
 using AutoMapper;
 using SoftwareCompaniesManagement.Api.DTO.GetDto;
 using SoftwareCompaniesManagement.Api.DTO.CreateDto;
-using static SoftwareCompaniesManagement.Api.MapEndpoints.Groups;
 using Microsoft.EntityFrameworkCore;
 
 namespace SoftwareCompaniesManagement.Api.MapEndpoints;
@@ -14,7 +13,7 @@ public static class EmployeesEndpoints
 {
     public static RouteGroupBuilder MapEmployeesEndpoints(this WebApplication app)
     {
-        var employeesGroup = app.MapGroup("companies/{companyId}/employees");
+        var employeesGroup = app.MapGroup("companies/{companyId}/employees").WithParameterValidation();
 
         var mapperConfiguration = new MapperConfiguration(cfg => 
         {
@@ -26,7 +25,7 @@ public static class EmployeesEndpoints
 
         var employeeMapper = mapperConfiguration.CreateMapper();
 
-        Employees.MapGet("", (CompaniesContext dbContext, int companyId) =>
+        employeesGroup.MapGet("", (CompaniesContext dbContext, int companyId) =>
         {
             var employees = dbContext.Employees.Where(employee => employee.CompanyId == companyId).ToList();
 
@@ -35,7 +34,7 @@ public static class EmployeesEndpoints
             return Results.Ok(employeeDTOs);
         });
 
-        Employees.MapGet("{employeeId}", (CompaniesContext dbContext, int companyId, int employeeId) =>
+        employeesGroup.MapGet("{employeeId}", (CompaniesContext dbContext, int companyId, int employeeId) =>
         {
             var employee = dbContext.Employees.Find(employeeId);
 
@@ -49,16 +48,16 @@ public static class EmployeesEndpoints
             {
                 return Results.NotFound("There is no such employee");
             }
-        }).WithName("GET_Employee");
+        }).WithName("GetEmployee");
 
-        Employees.MapPost("", (CompaniesContext dbContext, int companyId, CreateEmployeeDto employeeDto) => 
+        employeesGroup.MapPost("", (CompaniesContext dbContext, int companyId, CreateEmployeeDto employeeDto) => 
         {
             var employee = employeeMapper.Map<Employee>(employeeDto);
 
             dbContext.Employees.Add(employee);
             dbContext.SaveChanges();
 
-            return Results.CreatedAtRoute("GET_Employee", new { employeeId = employee.Id }, employeeMapper.Map<EmployeeDto>(employee));
+            return Results.CreatedAtRoute("GetEmployee", new { employeeId = employee.Id }, employeeMapper.Map<EmployeeDto>(employee));
         });
 
         return employeesGroup;

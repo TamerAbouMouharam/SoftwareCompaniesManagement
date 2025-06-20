@@ -146,3 +146,8 @@ C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesM
 C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Authorization\obj\Debug\net8.0\SoftwareCompaniesManagement.Authorization.pdb
 C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Authorization\obj\Debug\net8.0\SoftwareCompaniesManagement.Authorization.genruntimeconfig.cache
 C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Authorization\obj\Debug\net8.0\ref\SoftwareCompaniesManagement.Authorization.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Authorization\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Authorization\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Authorization\bin\Debug\net8.0\MinimalApis.Extensions.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Authorization\bin\Debug\net8.0\MiniValidation.dll
+C:\Users\Tamer\Desktop\TheProject\SoftwareCompaniesManagement\SoftwareCompaniesManagement.Authorization\obj\Debug\net8.0\SoftwareCompaniesManagement.Authorization.MvcApplicationPartsAssemblyInfo.cs

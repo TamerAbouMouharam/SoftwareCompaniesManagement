@@ -9,11 +9,11 @@ public record class EmployeeDto(
 
     decimal Salary,
 
-    Role Role,
+    string Role,
 
-    DateOnly Birthdate,
+    DateTime Birthdate,
 
-    DateOnly HiringDate,
+    DateTime HiringDate,
 
     int AccountId,
 
