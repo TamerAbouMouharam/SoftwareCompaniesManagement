@@ -12,7 +12,7 @@ public class Company
 
     public string? Description { get; set; }
 
-    public DateTime? EstablishDate { get; set; }
+    public DateOnly? EstablishDate { get; set; }
 
     [ForeignKey("Account")]
     public int AccountId { get; set; }

@@ -19,10 +19,10 @@ public record class CreateProjectDto(
     string Status,
 
     [Required]
-    DateTime StartDate,
+    DateOnly StartDate,
 
     [Required]
-    DateTime EndDate,
+    DateOnly EndDate,
 
     [Required]
     int ManagerId,

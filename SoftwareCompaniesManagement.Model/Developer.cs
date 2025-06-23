@@ -12,9 +12,9 @@ public class Developer
 
     public decimal Salary { get; set; }
 
-    public DateTime Birthdate { get; set; }
+    public DateOnly Birthdate { get; set; }
 
-    public DateTime HiringDate { get; set; }
+    public DateOnly HiringDate { get; set; }
 
     [ForeignKey("Account")]
     public int AccountId { get; set; }

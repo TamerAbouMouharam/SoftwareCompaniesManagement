@@ -15,9 +15,9 @@ public record class TaskDto(
 
     string Status,
 
-    DateTime StartDate,
+    DateOnly StartDate,
 
-    DateTime EndDate,
+    DateOnly EndDate,
 
     double EstimateEffort,
 

@@ -13,9 +13,9 @@ public record class ProjectDto(
 
     string Status,
 
-    DateTime StartDate,
+    DateOnly StartDate,
 
-    DateTime EndDate,
+    DateOnly EndDate,
 
     int ManagerId,
 

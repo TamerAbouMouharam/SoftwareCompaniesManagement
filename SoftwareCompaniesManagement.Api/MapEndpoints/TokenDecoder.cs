@@ -9,7 +9,7 @@ public static class TokenDecoder
 {
     public static ClaimsPrincipal DecodeToken(HttpContext context)
     {
-        var authCookie = context.Request.Headers["cookie"].FirstOrDefault(cookie => cookie!.StartsWith("auth"));
+        var authCookie = context.Request.Cookies["token"];
 
         var handler = new JwtSecurityTokenHandler();
 
@@ -24,6 +24,6 @@ public static class TokenDecoder
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("@@E#mqe$$@!!42tEggsWrFFwQrrw$^&#"))
         };
 
-        return handler.ValidateToken(authCookie, tokenParameters, out var securityToken);
+        return handler.ValidateToken(authCookie, tokenParameters, out _);
     }
 }

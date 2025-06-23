@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SoftwareCompaniesManagement.Api.Data;
 
@@ -10,9 +11,11 @@ using SoftwareCompaniesManagement.Api.Data;
 namespace SoftwareCompaniesManagement.Api.Data.Migrations
 {
     [DbContext(typeof(CompaniesContext))]
-    partial class CompaniesContextModelSnapshot : ModelSnapshot
+    [Migration("20250621040827_Fixing Data Types(Finishing)")]
+    partial class FixingDataTypesFinishing
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.10");
@@ -20,6 +23,7 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
             modelBuilder.Entity("SoftwareCompaniesManagement.Model.Account", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Password")
@@ -29,6 +33,8 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Accounts");
                 });

@@ -15,8 +15,7 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                 name: "Accounts",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<int>(type: "INTEGER", nullable: false),
                     Username = table.Column<string>(type: "TEXT", nullable: false),
                     Password = table.Column<string>(type: "TEXT", nullable: false)
                 },

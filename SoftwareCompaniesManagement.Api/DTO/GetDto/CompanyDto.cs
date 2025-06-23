@@ -7,7 +7,7 @@ public record class CompanyDto(
 
     string Description,
 
-    DateTime EstablishDate,
+    DateOnly EstablishDate,
 
     int AccountId
 );

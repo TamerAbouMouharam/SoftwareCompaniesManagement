@@ -18,9 +18,9 @@ public class Project
     [AllowedValues("created", "started", "done", "canceled")]
     public required string Status { get; set; }
 
-    public DateTime StartDate { get; set; }
+    public DateOnly StartDate { get; set; }
 
-    public DateTime EndDate { get; set; }
+    public DateOnly EndDate { get; set; }
 
     [ForeignKey("Manager")]
     public int ManagerId { get; set; }

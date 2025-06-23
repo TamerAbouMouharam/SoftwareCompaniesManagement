@@ -11,9 +11,9 @@ public record class EmployeeDto(
 
     string Role,
 
-    DateTime Birthdate,
+    DateOnly Birthdate,
 
-    DateTime HiringDate,
+    DateOnly HiringDate,
 
     int AccountId,
 

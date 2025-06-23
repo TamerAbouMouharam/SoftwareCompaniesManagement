@@ -16,9 +16,9 @@ public class Employee
     [AllowedValues("employee", "project_manager", "employee_manager")]
     public required string Role { get; set; }
 
-    public DateTime Birthdate { get; set; }
+    public DateOnly Birthdate { get; set; }
 
-    public DateTime HiringDate { get; set; }
+    public DateOnly HiringDate { get; set; }
     
     [ForeignKey("Account")]
     public int AccountId { get; set; }

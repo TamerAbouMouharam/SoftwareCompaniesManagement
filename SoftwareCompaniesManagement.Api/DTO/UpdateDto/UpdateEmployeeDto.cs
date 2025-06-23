@@ -20,10 +20,10 @@ public record class UpdateEmployeeDto(
     string Role,
 
     [Required]
-    DateTime Birthdate,
+    DateOnly Birthdate,
 
     [Required]
-    DateTime HiringDate,
+    DateOnly HiringDate,
 
     [Required]
     int AccountId,

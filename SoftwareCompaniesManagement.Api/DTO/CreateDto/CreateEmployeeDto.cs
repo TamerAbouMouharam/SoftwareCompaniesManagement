@@ -17,10 +17,10 @@ public record class CreateEmployeeDto(
     string Role,
 
     [Required]
-    DateTime Birthdate,
+    DateOnly Birthdate,
 
     [Required]
-    DateTime HiringDate,
+    DateOnly HiringDate,
 
     [Required]
     int AccountId,

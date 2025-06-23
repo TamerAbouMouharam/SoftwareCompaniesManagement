@@ -11,9 +11,9 @@ public record class UpdateDeveloperDto(
     [Range(0, double.MaxValue)]
     decimal Salary,
 
-    DateTime Birthdate,
+    DateOnly Birthdate,
 
-    DateTime HiringDate,
+    DateOnly HiringDate,
 
     [Required]
     int AccountId,

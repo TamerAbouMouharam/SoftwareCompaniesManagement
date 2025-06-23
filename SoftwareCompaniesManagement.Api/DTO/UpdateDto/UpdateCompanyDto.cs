@@ -10,7 +10,7 @@ public record class UpdateCompanyDto(
     [StringLength(500)]
     string Description,
 
-    DateTime EstablishDate,
+    DateOnly EstablishDate,
 
     [Required]
     int AccountId

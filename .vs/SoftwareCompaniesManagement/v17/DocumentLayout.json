@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E47D25F6-7D70-4D2E-BC3F-5AF10056E3B1}|SoftwareCompaniesManagement.Model\\SoftwareCompaniesManagement.Model.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.model\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E47D25F6-7D70-4D2E-BC3F-5AF10056E3B1}|SoftwareCompaniesManagement.Model\\SoftwareCompaniesManagement.Model.csproj|solutionrelative:softwarecompaniesmanagement.model\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FAE94CBB-5C35-4654-A358-5536B3BB0CEC}|SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.authorization\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAE94CBB-5C35-4654-A358-5536B3BB0CEC}|SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj|solutionrelative:softwarecompaniesmanagement.authorization\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAE94CBB-5C35-4654-A358-5536B3BB0CEC}|SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.authorization\\dto\\signupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAE94CBB-5C35-4654-A358-5536B3BB0CEC}|SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj|solutionrelative:softwarecompaniesmanagement.authorization\\dto\\signupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Account.cs",
-              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Model\\Account.cs",
-              "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Model\\Account.cs",
-              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Model\\Account.cs",
-              "RelativeToolTip": "SoftwareCompaniesManagement.Model\\Account.cs",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\Program.cs",
+              "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Authorization\\Program.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\Program.cs",
+              "RelativeToolTip": "SoftwareCompaniesManagement.Authorization\\Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAAC0AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T13:32:11.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SignupDto.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\DTO\\SignupDto.cs",
+              "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Authorization\\DTO\\SignupDto.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\DTO\\SignupDto.cs",
+              "RelativeToolTip": "SoftwareCompaniesManagement.Authorization\\DTO\\SignupDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T17:21:08.272Z",
+              "WhenOpened": "2025-06-23T13:32:03.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\Program.cs",
+              "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\Program.cs",
+              "RelativeToolTip": "SoftwareCompaniesManagement.Api\\Program.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAAB8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T08:06:15.271Z",
               "EditorCaption": ""
             }
           ]

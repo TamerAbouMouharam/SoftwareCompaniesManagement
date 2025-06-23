@@ -22,10 +22,10 @@ public record class UpdateTaskDto(
     string Status,
 
     [Required]
-    DateTime StartDate,
+    DateOnly StartDate,
 
     [Required]
-    DateTime EndDate,
+    DateOnly EndDate,
 
     [Required]
     double EstimateEffort,

@@ -8,6 +8,7 @@ using System.Security.Claims;
 using SoftwareCompaniesManagement.Authorization.DTO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,9 +44,9 @@ var GenerateToken = (Account user) =>
     var claims = new[]
     {
         new Claim(JwtRegisteredClaimNames.Sub, user.Username),
-        new Claim("role", user.Role),
-        new Claim("companyId", user.CompanyId.ToString()),
-        new Claim("isActive", user.IsActive.ToString())
+        new Claim("_role", user.Role),
+        new Claim("_companyId", user.CompanyId.ToString()),
+        new Claim("_isActive", user.IsActive.ToString())
     };
 
     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("@@E#mqe$$@!!42tEggsWrFFwQrrw$^&#"));
@@ -94,11 +95,18 @@ app.MapPost("login", (AccountsContext dbContext, LoginDto dto) =>
 
     var token = GenerateToken(user);
 
+    DecodeToken(token).Claims.ToList().ForEach(Console.WriteLine);
+
     return Results.Ok(new { Token = token, CookieData = new { role = user.Role, companyId = user.CompanyId } });
 }).WithParameterValidation();
 
 app.MapPost("signup", (AccountsContext dbContext, SignupDto dto) => 
 {
+    if(dto is null)
+    {
+        return Results.BadRequest();
+    }
+
     if (dbContext.Accounts.Any(u => u.Username == dto.Username))
     {
         return Results.BadRequest("Username is already taken.");
@@ -117,19 +125,50 @@ app.MapPost("signup", (AccountsContext dbContext, SignupDto dto) =>
     dbContext.Accounts.Add(account);
     dbContext.SaveChanges();
 
-    return Results.Ok("Account successfully created!");
+    return Results.Ok(new {AccountId = account.Id});
 }).WithParameterValidation();
 
-app.MapPost("{accountId}/activate", (AccountsContext dbContext, HttpContext httpContext, int accountId) => 
+app.MapGet("{companyId}/not_activated", (AccountsContext dbContext, HttpContext httpContext, int companyId) =>
 {
-    var token = httpContext.Request.Headers.Cookie.FirstOrDefault(cookie => cookie.StartsWith("token")).Split('=').Last();
+    var token = httpContext.Request.Cookies["token"];
+
+    if(token is null)
+    {
+        return Results.Unauthorized();
+    }
+
+    var decodedToken = DecodeToken(token);
+
+    var role = DecodeToken(token).Claims.FirstOrDefault(claim => claim.Type.Equals("_role"))?.Value;
+    var tokenCompanyId = DecodeToken(token).Claims.FirstOrDefault(claim => claim.Type.Equals("_companyId"))?.Value;
+
+    Console.WriteLine(role);
+
+    if (role != "company" && role != "employee_manager" || int.Parse(tokenCompanyId) != companyId)
+    {
+        return Results.Unauthorized();
+    }
+
+    var accounts = dbContext.Accounts.Where(account => !account.IsActive).ToList();
+
+    return Results.Ok(accounts);
+});
+
+app.MapPut("{accountId}/activate", (AccountsContext dbContext, HttpContext httpContext, int accountId) => 
+{
+    var token = httpContext.Request.Headers.Cookie.FirstOrDefault(cookie => cookie.StartsWith("token")).Split('=').LastOrDefault();
+
+    if(token is null)
+    {
+        return Results.Unauthorized();
+    }
 
     var accountCompanyId = dbContext.Accounts.Find(accountId).CompanyId;
 
-    var role = DecodeToken(token).FindFirst("role").Value;
-    var companyId = DecodeToken(token).FindFirst("companyId").Value;
+    var role = DecodeToken(token).FindFirst("_role").Value;
+    var companyId = DecodeToken(token).FindFirst("_companyId").Value;
 
-    if(token is null || role != "company" && role != "employee_manager" || int.Parse(companyId) != accountCompanyId)
+    if(role != "company" && role != "employee_manager" || int.Parse(companyId) != accountCompanyId)
     {
         return Results.Unauthorized();
     }
@@ -139,9 +178,36 @@ app.MapPost("{accountId}/activate", (AccountsContext dbContext, HttpContext http
         account.IsActive = true;
         dbContext.SaveChanges();
 
-        return Results.Ok("Account successfully activated!");
+        return Results.NoContent();
     }
 });
+
+app.MapPut("{accountId}/set_company_id/{companyId}", (AccountsContext dbContext, HttpContext httpContext, int accountId, int companyId) =>
+{
+    var account = dbContext.Accounts.Find(accountId);
+
+    if(account is null)
+    {
+        return Results.NotFound();
+    }
+
+    Account updatedAccount = new Account()
+    {
+        Id = account.Id,
+        Username = account.Username,
+        Password = account.Password,
+        Role = account.Role,
+        CompanyId = companyId,
+        IsActive = account.IsActive
+    };
+
+    dbContext.Entry(account).CurrentValues.SetValues(updatedAccount);
+    dbContext.SaveChanges();
+
+    return Results.NoContent();
+});
+
+app.MapGet("test", () => "Hello Reem!");
 
 using var scope = app.Services.CreateScope();
 var dbContext = scope.ServiceProvider.GetRequiredService<AccountsContext>();
