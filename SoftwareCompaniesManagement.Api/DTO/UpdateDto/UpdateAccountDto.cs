@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace SoftwareCompaniesManagement.Api.DTO.CreateDto;
+namespace SoftwareCompaniesManagement.Api.DTO.UpdateDto;
 
 public record class UpdateAccountDto(
     [Required]

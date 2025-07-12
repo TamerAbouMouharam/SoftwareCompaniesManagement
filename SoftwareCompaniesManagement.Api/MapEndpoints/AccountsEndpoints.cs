@@ -49,6 +49,11 @@ public static class AccountsEndpoints
 
         });
 
+        accountsGroup.MapPut("{accountId}", (CompaniesContext dbContext, int accountId, UpdateAccountDto dto) =>
+        {
+
+        });
+
         return accountsGroup;
     }
 }

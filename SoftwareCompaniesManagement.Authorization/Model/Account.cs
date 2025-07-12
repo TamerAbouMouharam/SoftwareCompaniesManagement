@@ -7,6 +7,8 @@ public class Account
     [Key]
     public int Id { get; set; }
 
+    public int InfoId { get; set; }
+
     public string Username { get; set; }
 
     public string Password { get; set; }

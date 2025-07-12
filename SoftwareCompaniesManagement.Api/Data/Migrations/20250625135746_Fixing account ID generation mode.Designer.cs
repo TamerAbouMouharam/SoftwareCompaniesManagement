@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SoftwareCompaniesManagement.Api.Data;
 
@@ -10,9 +11,11 @@ using SoftwareCompaniesManagement.Api.Data;
 namespace SoftwareCompaniesManagement.Api.Data.Migrations
 {
     [DbContext(typeof(CompaniesContext))]
-    partial class CompaniesContextModelSnapshot : ModelSnapshot
+    [Migration("20250625135746_Fixing account ID generation mode")]
+    partial class FixingaccountIDgenerationmode
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.10");
@@ -303,32 +306,6 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Technologies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "RDBMS",
-                            TechnologyName = "Microsoft SQL Server"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Frontend Development Library",
-                            TechnologyName = "React"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Backend Development Tools Uisng C#",
-                            TechnologyName = "ASP.NET Core"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "A Cross-Platform App Development Framework Using C#",
-                            TechnologyName = ".NET MAUI"
-                        });
                 });
 
             modelBuilder.Entity("SoftwareCompaniesManagement.Model.Company", b =>

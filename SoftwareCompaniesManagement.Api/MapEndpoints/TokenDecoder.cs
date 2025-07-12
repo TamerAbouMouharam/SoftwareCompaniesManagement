@@ -11,6 +11,11 @@ public static class TokenDecoder
     {
         var authCookie = context.Request.Cookies["token"];
 
+        if(authCookie is null)
+        {
+            return null;
+        }
+
         var handler = new JwtSecurityTokenHandler();
 
         var tokenParameters = new TokenValidationParameters
@@ -24,6 +29,13 @@ public static class TokenDecoder
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("@@E#mqe$$@!!42tEggsWrFFwQrrw$^&#"))
         };
 
-        return handler.ValidateToken(authCookie, tokenParameters, out _);
+        var token = handler.ValidateToken(authCookie, tokenParameters, out _);
+
+        if (token is null)
+        {
+            return null;
+        }
+
+        return token;
     }
 }

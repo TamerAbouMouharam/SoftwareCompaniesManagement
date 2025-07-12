@@ -6,6 +6,8 @@ using AutoMapper;
 using SoftwareCompaniesManagement.Api.DTO.GetDto;
 using SoftwareCompaniesManagement.Api.DTO.CreateDto;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 
 namespace SoftwareCompaniesManagement.Api.MapEndpoints;
 
@@ -25,8 +27,23 @@ public static class EmployeesEndpoints
 
         var employeeMapper = mapperConfiguration.CreateMapper();
 
-        employeesGroup.MapGet("", (CompaniesContext dbContext, int companyId) =>
+        employeesGroup.MapGet("", (CompaniesContext dbContext, HttpContext httpContext, int companyId) =>
         {
+            var token = TokenDecoder.DecodeToken(httpContext);
+
+            if (token is null)
+            {
+                return Results.Unauthorized();
+            }
+
+            var role = token.FindFirst("_role").Value;
+            var sentCompanyId = token.FindFirst("_companyId").Value;
+
+            if (role != "company" && role != "employee_manager" || int.Parse(sentCompanyId) != companyId)
+            {
+                return Results.Unauthorized();
+            }
+
             var employees = dbContext.Employees.Where(employee => employee.CompanyId == companyId).ToList();
 
             var employeeDTOs = employees.Select(employee => employeeMapper.Map<EmployeeDto>(employee)).ToList();
@@ -58,6 +75,30 @@ public static class EmployeesEndpoints
             dbContext.SaveChanges();
 
             return Results.CreatedAtRoute("GetEmployee", new { employeeId = employee.Id }, employeeMapper.Map<EmployeeDto>(employee));
+        });
+
+        employeesGroup.MapPut("{employeeId}", (CompaniesContext dbContext, HttpContext httpContext, int companyId, CreateEmployeeDto employeeDto, int employeeId) =>
+        {
+            var token = TokenDecoder.DecodeToken(httpContext);
+
+            if (token is null)
+            {
+                return Results.Unauthorized();
+            }
+
+            var role = token.FindFirst("_role").Value;
+            var sentCompanyId = token.FindFirst("_companyId").Value;
+
+            if(role != "company" && role != "employee_manager" || int.Parse(sentCompanyId) != companyId)
+            {
+                return Results.Unauthorized();
+            }
+
+            var employee = dbContext.Employees.Find(employeeId);
+            dbContext.Employees.Entry(employee).CurrentValues.SetValues(employeeDto);
+            dbContext.SaveChanges();
+
+            return Results.NoContent();
         });
 
         return employeesGroup;

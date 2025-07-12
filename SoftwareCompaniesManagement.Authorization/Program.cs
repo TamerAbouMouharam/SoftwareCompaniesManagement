@@ -46,7 +46,8 @@ var GenerateToken = (Account user) =>
         new Claim(JwtRegisteredClaimNames.Sub, user.Username),
         new Claim("_role", user.Role),
         new Claim("_companyId", user.CompanyId.ToString()),
-        new Claim("_isActive", user.IsActive.ToString())
+        new Claim("_isActive", user.IsActive.ToString()),
+        new Claim("_infoId", user.InfoId.ToString())
     };
 
     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("@@E#mqe$$@!!42tEggsWrFFwQrrw$^&#"));
@@ -89,8 +90,8 @@ app.MapPost("login", (AccountsContext dbContext, LoginDto dto) =>
 
     if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.Password) || !user.IsActive)
     {
-        var accountId = user.Id;
-        return Results.Problem($"[Account ID: ({accountId})]", "There is a problem with account", StatusCodes.Status401Unauthorized);
+        var accountUser = dto.Username;
+        return Results.Problem($"[Username: ({accountUser})]", "There is a problem with account", StatusCodes.Status401Unauthorized);
     }
 
     var token = GenerateToken(user);
@@ -186,7 +187,7 @@ app.MapPut("{accountId}/set_company_id/{companyId}", (AccountsContext dbContext,
 {
     var account = dbContext.Accounts.Find(accountId);
 
-    if(account is null)
+    if (account is null)
     {
         return Results.NotFound();
     }
@@ -207,7 +208,31 @@ app.MapPut("{accountId}/set_company_id/{companyId}", (AccountsContext dbContext,
     return Results.NoContent();
 });
 
-app.MapGet("test", () => "Hello Reem!");
+app.MapPut("{accountId}/set_info_id/{infoId}", (AccountsContext dbContext, HttpContext httpContext, int accountId, int infoId) =>
+{
+    var account = dbContext.Accounts.Find(accountId);
+
+    if (account is null)
+    {
+        return Results.NotFound();
+    }
+
+    Account updatedAccount = new Account()
+    {
+        Id = account.Id,
+        InfoId = account.InfoId,
+        Username = account.Username,
+        Password = account.Password,
+        Role = account.Role,
+        CompanyId = account.CompanyId,
+        IsActive = account.IsActive
+    };
+
+    dbContext.Entry(account).CurrentValues.SetValues(updatedAccount);
+    dbContext.SaveChanges();
+
+    return Results.NoContent();
+});
 
 using var scope = app.Services.CreateScope();
 var dbContext = scope.ServiceProvider.GetRequiredService<AccountsContext>();

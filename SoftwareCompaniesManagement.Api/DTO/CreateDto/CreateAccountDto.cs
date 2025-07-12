@@ -4,6 +4,9 @@ namespace SoftwareCompaniesManagement.Api.DTO.CreateDto;
 
 public record class CreateAccountDto(
     [Required]
+    int Id,
+
+    [Required]
     [StringLength(20)]
     string Username,
 

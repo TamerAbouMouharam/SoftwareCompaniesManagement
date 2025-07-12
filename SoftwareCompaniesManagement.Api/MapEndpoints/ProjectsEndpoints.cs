@@ -14,7 +14,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
     {
         public static RouteGroupBuilder MapProjectsEndpoints(this WebApplication app)
         {
-            var projectsGroup = app.MapGroup("companies/{companyId}/projects");
+            /*var projectsGroup = app.MapGroup("companies/{companyId}/projects");
 
             var mapperConfiguration = new MapperConfiguration(cfg =>
             {
@@ -128,7 +128,10 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
             });
 
 
-            return projectsGroup;
-        }
+            return projectsGroup;*/
+
+            return null;
+
+        } 
     }
 }
