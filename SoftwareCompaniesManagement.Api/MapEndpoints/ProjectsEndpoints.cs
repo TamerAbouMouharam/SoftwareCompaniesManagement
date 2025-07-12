@@ -14,7 +14,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
     {
         public static RouteGroupBuilder MapProjectsEndpoints(this WebApplication app)
         {
-            /*var projectsGroup = app.MapGroup("companies/{companyId}/projects");
+            var projectsGroup = app.MapGroup("companies/{companyId}/projects");
 
             var mapperConfiguration = new MapperConfiguration(cfg =>
             {
@@ -47,6 +47,15 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
 
                 var projects = dbContext.Projects.Where(project => project.CompanyId == companyId);
 
+                if(role == "developer")
+                {
+                    var infoId = int.Parse(token.FindFirst("_infoId").Value);
+
+                    var developerProjects = dbContext.DeveloperProjects.Where(devProj => devProj.DeveloperId == infoId).Select(devProj => devProj.ProjectId).ToList();
+
+                    projects = projects.Where(project => developerProjects.Contains(project.Id));
+                }
+
                 return Results.Ok(projects.ToList().Select(projectMapper.Map<Project, ProjectDto>).ToList());
             });
 
@@ -62,9 +71,21 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 var role = token.FindFirst("_role").Value;
                 var sentCompanyId = token.FindFirst("_companyId").Value;
 
-                if (role != "company" && role != "project_manager" || int.Parse(sentCompanyId) != companyId)
+                if (role != "company" && role != "project_manager" && role != "developer" || int.Parse(sentCompanyId) != companyId)
                 {
                     return Results.Unauthorized();
+                }
+
+                if(role == "developer")
+                {
+                    var infoId = int.Parse(token.FindFirst("_infoId").Value);
+
+                    var developerProject = dbContext.DeveloperProjects.Where(devProj => devProj.DeveloperId == infoId && devProj.ProjectId == projectId).Any();
+
+                    if(!developerProject)
+                    {
+                        return Results.Unauthorized();
+                    }
                 }
 
                 var project = dbContext.Projects.FirstOrDefault(project => project.CompanyId == companyId && project.Id == projectId);
@@ -94,7 +115,10 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                     return Results.Unauthorized();
                 }
 
+                var infoId = int.Parse(token.FindFirst("_infoId").Value);
+
                 var project = projectMapper.Map<CreateProjectDto, Project>(projectDto);
+                project.ManagerId = infoId;
 
                 dbContext.Projects.Add(project);
                 dbContext.SaveChanges();
@@ -102,7 +126,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 return Results.CreatedAtRoute("GetProject", new { projectId = project.Id, companyId }, projectMapper.Map<Project, ProjectDto>(project));
             });
 
-            projectsGroup.MapDelete("{projectId}", (CompaniesContext dbContext, HttpContext httpContext, CreateProjectDto projectDto, int companyId, int projectId) =>
+            projectsGroup.MapPut("{projectId}", (CompaniesContext dbContext, HttpContext httpContext, UpdateProjectDto projectDto, int companyId, int projectId) =>
             {
                 var token = TokenDecoder.DecodeToken(httpContext);
 
@@ -119,18 +143,47 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                     return Results.Unauthorized();
                 }
 
-                var project = projectMapper.Map<CreateProjectDto, Project>(projectDto);
+                var infoId = int.Parse(token.FindFirst("_infoId").Value);
+
+                var projectNewData = projectMapper.Map<UpdateProjectDto, Project>(projectDto);
+
+                var project = dbContext.Projects.Find(projectId);
+
+                if (infoId != project.ManagerId)
+                {
+                    return Results.Unauthorized();
+                }
+
+                dbContext.Projects.Entry(project).CurrentValues.SetValues(projectNewData);
+                dbContext.SaveChanges();
+
+                return Results.NoContent();
+            });
+
+            projectsGroup.MapDelete("{projectId}", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int projectId) =>
+            {
+                var token = TokenDecoder.DecodeToken(httpContext);
+
+                if (token is null)
+                {
+                    return Results.Unauthorized();
+                }
+
+                var role = token.FindFirst("_role").Value;
+                var sentCompanyId = token.FindFirst("_companyId").Value;
+
+                if (role != "company" && role != "project_manager" || int.Parse(sentCompanyId) != companyId)
+                {
+                    return Results.Unauthorized();
+                }
 
                 dbContext.Projects.Where(project => project.Id == projectId).ExecuteDelete();
                 dbContext.SaveChanges();
 
-                return Results.CreatedAtRoute("GetProject", new { projectId = project.Id, companyId }, projectMapper.Map<Project, ProjectDto>(project));
+                return Results.NoContent();
             });
 
-
-            return projectsGroup;*/
-
-            return null;
+            return projectsGroup;
 
         } 
     }

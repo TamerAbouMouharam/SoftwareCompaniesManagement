@@ -31,6 +31,7 @@ dbContext.Database.Migrate();
 app.MapAccountsEndpoints();
 app.MapCompaniesEndpoints();
 app.MapEmployeesEndpoints();
+app.MapDevelopersEndpoints();
 app.MapProjectsEndpoints();
 
 app.Run();

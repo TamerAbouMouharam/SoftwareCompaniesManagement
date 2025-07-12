@@ -13,7 +13,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
 {
     public static class DevelopersEndpoints
     {
-        public static RouteGroupBuilder MapDvelopersEndpoints(this WebApplication app)
+        public static RouteGroupBuilder MapDevelopersEndpoints(this WebApplication app)
         {
             var developersGroup = app.MapGroup("companies/{companyId}/developers").WithParameterValidation();
 
