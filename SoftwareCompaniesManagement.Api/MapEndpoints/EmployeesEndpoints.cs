@@ -95,6 +95,12 @@ public static class EmployeesEndpoints
             }
 
             var employee = dbContext.Employees.Find(employeeId);
+
+            if(employee is null)
+            {
+                return Results.NotFound();
+            }
+
             dbContext.Employees.Entry(employee).CurrentValues.SetValues(employeeDto);
             dbContext.SaveChanges();
 

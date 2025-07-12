@@ -101,6 +101,11 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
 
                 var developer = dbContext.Developers.Find(developerId);
 
+                if(developer is null)
+                {
+                    return Results.NotFound();
+                }
+
                 dbContext.Developers.Entry(developer).CurrentValues.SetValues(developerMapper.Map<UpdateDeveloperDto, Developer>(dto));
                 dbContext.SaveChanges();
 

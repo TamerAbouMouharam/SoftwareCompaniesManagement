@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations;
 namespace SoftwareCompaniesManagement.Api.DTO.UpdateDto;
 
 public record class UpdateCompanyDto(
-    [Required]
     [StringLength(35)]
     string CompanyName,
 
@@ -12,6 +11,5 @@ public record class UpdateCompanyDto(
 
     DateOnly EstablishDate,
 
-    [Required]
     int AccountId
 );

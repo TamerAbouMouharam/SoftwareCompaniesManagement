@@ -18,7 +18,7 @@ public record class CreateTaskDto(
     int Complexity,
 
     [Required]
-    [AllowedValues("created", "started", "done", "canceled")]
+    [AllowedValues("created", "started", "done", "canceled", "accepted")]
     string Status,
 
     [Required]

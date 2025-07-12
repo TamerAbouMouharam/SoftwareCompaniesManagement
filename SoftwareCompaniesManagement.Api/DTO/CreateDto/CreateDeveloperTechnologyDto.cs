@@ -11,7 +11,7 @@ public record class CreateDeveloperTechnologyDto(
     int TechnologyId,
 
     [Required]
-    [AllowedValues("freshman", "beginner", "Intermediate", "advanced")]
+    [AllowedValues("freshman", "beginner", "intermediate", "advanced")]
     string ExperienceLevel,
 
     [Required]
