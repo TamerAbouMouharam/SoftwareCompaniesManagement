@@ -33,5 +33,7 @@ app.MapCompaniesEndpoints();
 app.MapEmployeesEndpoints();
 app.MapDevelopersEndpoints();
 app.MapProjectsEndpoints();
+app.MapDeveloperTechnologiesEndpoints();
+app.MapProjectTechnologiesEndpoints();
 
 app.Run();

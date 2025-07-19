@@ -220,7 +220,7 @@ app.MapPut("{accountId}/set_info_id/{infoId}", (AccountsContext dbContext, HttpC
     Account updatedAccount = new Account()
     {
         Id = account.Id,
-        InfoId = account.InfoId,
+        InfoId = infoId,
         Username = account.Username,
         Password = account.Password,
         Role = account.Role,

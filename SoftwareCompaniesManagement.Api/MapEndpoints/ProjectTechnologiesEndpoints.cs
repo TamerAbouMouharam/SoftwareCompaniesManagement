@@ -79,6 +79,40 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 return Results.Ok(technologies.Select(projectTechnologiesMapper.Map<ProjectTechnology, ProjectTechnologyDto>));
             });
 
+            projectTechnologiesGroup.MapPost("", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int projectId, CreateProjectTechnologyDto dto) =>
+            {
+                var token = TokenDecoder.DecodeToken(httpContext);
+
+                if (token is null)
+                {
+                    return Results.Unauthorized();
+                }
+
+                var role = token.FindFirst("_role").Value;
+
+                var project = dbContext.Projects.Find(projectId);
+
+                if (project is null)
+                {
+                    return Results.NotFound();
+                }
+
+                var managerId = project.ManagerId;
+
+                if (int.Parse(token.FindFirst("_infoId").Value) != managerId &&
+                    int.Parse(token.FindFirst("_infoId").Value) != companyId ||
+                    role != "project_manager" &&
+                    role != "company")
+                {
+                    return Results.Unauthorized();
+                }
+
+                dbContext.ProjectTechnologies.Add(projectTechnologiesMapper.Map<CreateProjectTechnologyDto, ProjectTechnology>(dto));
+                dbContext.SaveChanges();
+
+                return Results.Created();
+            });
+
             return projectTechnologiesGroup;
         }
     }

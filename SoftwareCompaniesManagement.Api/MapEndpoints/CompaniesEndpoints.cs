@@ -32,13 +32,13 @@ public static class CompaniesEndpoints
             }
             else
             {
-                return Results.Ok(companiesMapper.Map<CompanyDto>(company));
+                return Results.Ok(companiesMapper.Map<Company, CompanyDto>(company));
             }
         }).WithName("GetCompany");
 
         companiesGroup.MapPost("", (CompaniesContext dbContext, CreateCompanyDto companyDto) =>
         {
-            var company = companiesMapper.Map<Company>(companyDto);
+            var company = companiesMapper.Map<CreateCompanyDto, Company>(companyDto);
 
             dbContext.Companies.Add(company);
             dbContext.SaveChanges();
