@@ -150,17 +150,18 @@ app.MapGet("{companyId}/not_activated", (AccountsContext dbContext, HttpContext 
         return Results.Unauthorized();
     }
 
-    var accounts = dbContext.Accounts.Where(account => !account.IsActive).ToList();
+    var accounts = dbContext.Accounts.Where(account => account.CompanyId == int.Parse(tokenCompanyId)).Where(account => !account.IsActive).ToList();
 
     return Results.Ok(accounts);
 });
 
 app.MapPut("{accountId}/activate", (AccountsContext dbContext, HttpContext httpContext, int accountId) => 
 {
-    var token = httpContext.Request.Headers.Cookie.FirstOrDefault(cookie => cookie.StartsWith("token")).Split('=').LastOrDefault();
+    var token = httpContext.Request.Cookies["token"];
 
-    if(token is null)
+    if (token is null)
     {
+        Console.Write("No Token");
         return Results.Unauthorized();
     }
 
@@ -171,6 +172,7 @@ app.MapPut("{accountId}/activate", (AccountsContext dbContext, HttpContext httpC
 
     if(role != "company" && role != "employee_manager" || int.Parse(companyId) != accountCompanyId)
     {
+        Console.WriteLine($"{companyId}, {accountCompanyId}");
         return Results.Unauthorized();
     }
     else
