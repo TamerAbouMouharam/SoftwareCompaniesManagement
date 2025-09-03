@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using SoftwareCompaniesManagement.Api.Data;
 using SoftwareCompaniesManagement.Api.DTO.CreateDto;
 using SoftwareCompaniesManagement.Api.DTO.GetDto;
@@ -113,7 +114,42 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 return Results.Created();
             });
 
+            projectTechnologiesGroup.MapDelete("{projectTechnoogyId}", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int projectId, int projectTechnoogyId) =>
+            {
+                var token = TokenDecoder.DecodeToken(httpContext);
+
+                if (token is null)
+                {
+                    return Results.Unauthorized();
+                }
+
+                var role = token.FindFirst("_role").Value;
+
+                var project = dbContext.Projects.Find(projectId);
+
+                if (project is null)
+                {
+                    return Results.NotFound();
+                }
+
+                var managerId = project.ManagerId;
+
+                if (int.Parse(token.FindFirst("_infoId").Value) != managerId &&
+                    int.Parse(token.FindFirst("_infoId").Value) != companyId ||
+                    role != "project_manager" &&
+                    role != "company")
+                {
+                    return Results.Unauthorized();
+                }
+
+                dbContext.ProjectTechnologies.Where(pt => pt.TechnologyId == projectTechnoogyId && pt.ProjectId == projectId).ExecuteDelete();
+                dbContext.SaveChanges();
+
+                return Results.Created();
+            });
+
             return projectTechnologiesGroup;
         }
+
     }
 }

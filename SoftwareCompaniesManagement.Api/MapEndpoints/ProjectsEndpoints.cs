@@ -154,7 +154,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                     return Results.Unauthorized();
                 }
 
-                dbContext.Projects.Entry(project).CurrentValues.SetValues(projectNewData);
+                dbContext.Projects.Entry(project).CurrentValues.SetValues(projectDto);
                 dbContext.SaveChanges();
 
                 return Results.NoContent();

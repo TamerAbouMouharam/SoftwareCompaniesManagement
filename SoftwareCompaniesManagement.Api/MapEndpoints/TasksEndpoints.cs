@@ -1,77 +1,183 @@
-﻿//using AutoMapper;
-//using SoftwareCompaniesManagement.Api.Data;
-//using SoftwareCompaniesManagement.Api.DTO.CreateDto;
-//using SoftwareCompaniesManagement.Api.DTO.GetDto;
-//using SoftwareCompaniesManagement.Api.DTO.UpdateDto;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using SoftwareCompaniesManagement.Api.Data;
+using SoftwareCompaniesManagement.Api.DTO.CreateDto;
+using SoftwareCompaniesManagement.Api.DTO.GetDto;
+using SoftwareCompaniesManagement.Api.DTO.UpdateDto;
 
-//namespace SoftwareCompaniesManagement.Api.MapEndpoints
-//{
-//    public static class TasksEndpoints
-//    {
-//        public static RouteGroupBuilder MapTasksEndpoints(this WebApplication app)
-//        {
-//            var tasksGroup = app.MapGroup("companies/{companyId}/projects/{projectId}/tasks");
+namespace SoftwareCompaniesManagement.Api.MapEndpoints
+{
+    public static class TasksEndpoints
+    {
+        public static RouteGroupBuilder MapTasksEndpoints(this WebApplication app)
+        {
+            var tasksGroup = app.MapGroup("companies/{companyId}/projects/{projectId}/tasks");
 
-//            var mapperConfiguration = new MapperConfiguration(cfg =>
-//            {
-//                cfg.CreateMap<Model.Task, TaskDto>();
-//                cfg.CreateMap<TaskDto, Model.Task>();
-//                cfg.CreateMap<Model.Task, CreateTaskDto>();
-//                cfg.CreateMap<CreateTaskDto, Model.Task>();
-//                cfg.CreateMap<Model.Task, UpdateTaskDto>();
-//                cfg.CreateMap<UpdateTaskDto, Model.Task>();
-//            });
+            var mapperConfiguration = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Model.Task, TaskDto>();
+                cfg.CreateMap<TaskDto, Model.Task>();
+                cfg.CreateMap<Model.Task, CreateTaskDto>();
+                cfg.CreateMap<CreateTaskDto, Model.Task>();
+                cfg.CreateMap<Model.Task, UpdateTaskDto>();
+                cfg.CreateMap<UpdateTaskDto, Model.Task>();
+            });
 
-//            var tasksMapper = mapperConfiguration.CreateMapper();
+            var tasksMapper = mapperConfiguration.CreateMapper();
 
-//            app.MapGet("", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int projectId) =>
-//            {
-//                var token = TokenDecoder.DecodeToken(httpContext);
+            tasksGroup.MapGet("", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int projectId) =>
+            {
+                var token = TokenDecoder.DecodeToken(httpContext);
 
-//                if (token is null)
-//                {
-//                    return Results.Unauthorized();
-//                }
+                if (token is null)
+                {
+                    return Results.Unauthorized();
+                }
 
-//                var role = token.FindFirst("_role").Value;
+                var role = token.FindFirst("_role").Value;
 
-//                var project = dbContext.Projects.Find(projectId);
+                var project = dbContext.Projects.Find(projectId);
 
-//                if (project is null)
-//                {
-//                    return Results.NotFound();
-//                }
+                if (project is null)
+                {
+                    return Results.NotFound();
+                }
 
-//                var managerId = project.ManagerId;
+                var managerId = project.ManagerId;
 
-//                if (int.Parse(token.FindFirst("_infoId").Value) != managerId ||
-//                    role != "project_manager" &&
-//                    role != "company")
-//                {
-//                    bool unauthorized = true;
+                if (int.Parse(token.FindFirst("_infoId").Value) != managerId ||
+                    role != "project_manager" &&
+                    role != "company")
+                {
+                    bool unauthorized = true;
 
-//                    if (role == "developer")
-//                    {
-//                        var infoId = int.Parse(token.FindFirst("_infoId").Value);
+                    if (role == "developer")
+                    {
+                        var infoId = int.Parse(token.FindFirst("_infoId").Value);
 
-//                        var developerProject = dbContext.DeveloperProjects.Where(devProj => devProj.DeveloperId == infoId && devProj.ProjectId == projectId).Any();
+                        var developerProject = dbContext.DeveloperProjects.Where(devProj => devProj.DeveloperId == infoId && devProj.ProjectId == projectId).Any();
 
-//                        if (!developerProject)
-//                        {
-//                            unauthorized = false;
-//                        }
-//                    }
+                        if (!developerProject)
+                        {
+                            unauthorized = false;
+                        }
+                    }
 
-//                    if (unauthorized)
-//                    {
-//                        return Results.Unauthorized();
-//                    }
-//                }
+                    if (unauthorized)
+                    {
+                        return Results.Unauthorized();
+                    }
+                }
 
+                var tasks = dbContext.Tasks.Where(task => task.ProjectId == projectId);
 
-//            });
+                return Results.Ok(tasks.Select(task => tasksMapper.Map<Model.Task, TaskDto>(task)));
+            });
 
-//            return tasksGroup;
-//        }
-//    }
-//}
+            tasksGroup.MapPost("", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int projectId, CreateTaskDto taskDto) =>
+            {
+                var token = TokenDecoder.DecodeToken(httpContext);
+
+                if (token is null)
+                {
+                    return Results.Unauthorized();
+                }
+
+                var role = token.FindFirst("_role").Value;
+
+                var project = dbContext.Projects.Find(projectId);
+
+                if (project is null)
+                {
+                    return Results.NotFound();
+                }
+
+                var managerId = project.ManagerId;
+
+                if (int.Parse(token.FindFirst("_infoId").Value) != managerId ||
+                    role != "project_manager" &&
+                    role != "company")
+                {
+                    bool unauthorized = true;
+
+                    if (role == "developer")
+                    {
+                        var infoId = int.Parse(token.FindFirst("_infoId").Value);
+
+                        var developerProject = dbContext.DeveloperProjects.Where(devProj => devProj.DeveloperId == infoId && devProj.ProjectId == projectId).Any();
+
+                        if (!developerProject)
+                        {
+                            unauthorized = false;
+                        }
+                    }
+
+                    if (unauthorized)
+                    {
+                        return Results.Unauthorized();
+                    }
+                }
+
+                var task = tasksMapper.Map<CreateTaskDto, Model.Task>(taskDto);
+
+                dbContext.Tasks.Add(task);
+                dbContext.SaveChanges();
+
+                return Results.Created();
+            });
+
+            tasksGroup.MapDelete("{taskId}", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int projectId, int taskId) =>
+            {
+                var token = TokenDecoder.DecodeToken(httpContext);
+
+                if (token is null)
+                {
+                    return Results.Unauthorized();
+                }
+
+                var role = token.FindFirst("_role").Value;
+
+                var project = dbContext.Projects.Find(projectId);
+
+                if (project is null)
+                {
+                    return Results.NotFound();
+                }
+
+                var managerId = project.ManagerId;
+
+                if (int.Parse(token.FindFirst("_infoId").Value) != managerId ||
+                    role != "project_manager" &&
+                    role != "company")
+                {
+                    bool unauthorized = true;
+
+                    if (role == "developer")
+                    {
+                        var infoId = int.Parse(token.FindFirst("_infoId").Value);
+
+                        var developerProject = dbContext.DeveloperProjects.Where(devProj => devProj.DeveloperId == infoId && devProj.ProjectId == projectId).Any();
+
+                        if (!developerProject)
+                        {
+                            unauthorized = false;
+                        }
+                    }
+
+                    if (unauthorized)
+                    {
+                        return Results.Unauthorized();
+                    }
+                }
+
+                dbContext.Tasks.Where(task => task.Id == taskId).ExecuteDelete();
+                dbContext.SaveChanges();
+
+                return Results.NoContent();
+            });
+
+            return tasksGroup;
+        }
+    }
+}
