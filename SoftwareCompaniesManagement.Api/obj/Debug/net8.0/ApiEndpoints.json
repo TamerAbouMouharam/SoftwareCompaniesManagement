@@ -613,6 +613,198 @@
     ]
   },
   {
+    "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.TasksEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapTasksEndpoints\u003Eb__1",
+    "RelativePath": "companies/{companyId}/projects/{projectId}/tasks/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "projectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.TasksEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapTasksEndpoints\u003Eb__2",
+    "RelativePath": "companies/{companyId}/projects/{projectId}/tasks/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "projectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "taskDto",
+        "Type": "SoftwareCompaniesManagement.Api.DTO.CreateDto.CreateTaskDto",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.TasksEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapTasksEndpoints\u003Eb__0_3",
+    "RelativePath": "companies/{companyId}/projects/{projectId}/tasks/{taskId}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "projectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "taskId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.TasksEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapTasksEndpoints\u003Eb__0_4",
+    "RelativePath": "companies/{companyId}/projects/{projectId}/tasks/{taskId}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "projectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "taskId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "taskDto",
+        "Type": "SoftwareCompaniesManagement.Api.DTO.UpdateDto.UpdateTaskDto",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.TasksEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapTasksEndpoints\u003Eb__0_6",
+    "RelativePath": "companies/{companyId}/projects/{projectId}/tasks/{taskId}/done",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "projectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "taskId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.TasksEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapTasksEndpoints\u003Eb__0_5",
+    "RelativePath": "companies/{companyId}/projects/{projectId}/tasks/{taskId}/lock",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "projectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "taskId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.ProjectTechnologiesEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
     "Method": "\u003CMapProjectTechnologiesEndpoints\u003Eb__1",
     "RelativePath": "companies/{companyId}/projects/{projectId}/technologies/",
@@ -661,6 +853,38 @@
         "Name": "dto",
         "Type": "SoftwareCompaniesManagement.Api.DTO.CreateDto.CreateProjectTechnologyDto",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.ProjectTechnologiesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapProjectTechnologiesEndpoints\u003Eb__0_3",
+    "RelativePath": "companies/{companyId}/projects/{projectId}/technologies/{projectTechnoogyId}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "projectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "projectTechnoogyId",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [

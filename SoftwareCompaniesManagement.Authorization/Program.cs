@@ -133,7 +133,7 @@ app.MapGet("{companyId}/not_activated", (AccountsContext dbContext, HttpContext 
 {
     var token = httpContext.Request.Cookies["token"];
 
-    if(token is null)
+    if (token is null)
     {
         return Results.Unauthorized();
     }
@@ -155,7 +155,33 @@ app.MapGet("{companyId}/not_activated", (AccountsContext dbContext, HttpContext 
     return Results.Ok(accounts);
 });
 
-app.MapPut("{accountId}/activate", (AccountsContext dbContext, HttpContext httpContext, int accountId) => 
+app.MapGet("{companyId}/activated", (AccountsContext dbContext, HttpContext httpContext, int companyId) =>
+{
+    var token = httpContext.Request.Cookies["token"];
+
+    if (token is null)
+    {
+        return Results.Unauthorized();
+    }
+
+    var decodedToken = DecodeToken(token);
+
+    var role = DecodeToken(token).Claims.FirstOrDefault(claim => claim.Type.Equals("_role"))?.Value;
+    var tokenCompanyId = DecodeToken(token).Claims.FirstOrDefault(claim => claim.Type.Equals("_companyId"))?.Value;
+
+    Console.WriteLine(role);
+
+    if (role != "company" && role != "employee_manager" || int.Parse(tokenCompanyId) != companyId)
+    {
+        return Results.Unauthorized();
+    }
+
+    var accounts = dbContext.Accounts.Where(account => account.CompanyId == int.Parse(tokenCompanyId)).Where(account => account.IsActive).ToList();
+
+    return Results.Ok(accounts);
+});
+
+app.MapPut("{accountId}/activate", (AccountsContext dbContext, HttpContext httpContext, int accountId) =>
 {
     var token = httpContext.Request.Cookies["token"];
 
@@ -170,7 +196,7 @@ app.MapPut("{accountId}/activate", (AccountsContext dbContext, HttpContext httpC
     var role = DecodeToken(token).FindFirst("_role").Value;
     var companyId = DecodeToken(token).FindFirst("_companyId").Value;
 
-    if(role != "company" && role != "employee_manager" || int.Parse(companyId) != accountCompanyId)
+    if (role != "company" && role != "employee_manager" || int.Parse(companyId) != accountCompanyId)
     {
         Console.WriteLine($"{companyId}, {accountCompanyId}");
         return Results.Unauthorized();
@@ -179,6 +205,36 @@ app.MapPut("{accountId}/activate", (AccountsContext dbContext, HttpContext httpC
     {
         var account = dbContext.Accounts.FirstOrDefault(u => u.Id == accountId);
         account.IsActive = true;
+        dbContext.SaveChanges();
+
+        return Results.NoContent();
+    }
+});
+
+app.MapPut("{accountId}/deactivate", (AccountsContext dbContext, HttpContext httpContext, int accountId) =>
+{
+    var token = httpContext.Request.Cookies["token"];
+
+    if (token is null)
+    {
+        Console.Write("No Token");
+        return Results.Unauthorized();
+    }
+
+    var accountCompanyId = dbContext.Accounts.Find(accountId).CompanyId;
+
+    var role = DecodeToken(token).FindFirst("_role").Value;
+    var companyId = DecodeToken(token).FindFirst("_companyId").Value;
+
+    if (role != "company" && role != "employee_manager" || int.Parse(companyId) != accountCompanyId)
+    {
+        Console.WriteLine($"{companyId}, {accountCompanyId}");
+        return Results.Unauthorized();
+    }
+    else
+    {
+        var account = dbContext.Accounts.FirstOrDefault(u => u.Id == accountId);
+        account.IsActive = false;
         dbContext.SaveChanges();
 
         return Results.NoContent();
