@@ -91,7 +91,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                     return Results.Unauthorized();
                 }
 
-                if (int.Parse(token.FindFirst("_infoId").Value) != developerId || 
+                if (int.Parse(token.FindFirst("_companyId").Value) != companyId || 
                     token.FindFirst("_role").Value != "employee_manager" && 
                     token.FindFirst("_role").Value != "company" && 
                     token.FindFirst("_role").Value != "developer")
@@ -106,7 +106,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                     return Results.NotFound();
                 }
 
-                dbContext.Developers.Entry(developer).CurrentValues.SetValues(developerMapper.Map<UpdateDeveloperDto, Developer>(dto));
+                dbContext.Developers.Entry(developer).CurrentValues.SetValues(dto);
                 dbContext.SaveChanges();
 
                 return Results.NoContent();

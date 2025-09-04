@@ -274,6 +274,42 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
 
                 var task = dbContext.Tasks.Find(taskId);
                 task.Status = "done";
+                var expectedTime = task.EndDate.ToDateTime(TimeOnly.FromDateTime(DateTime.Now)).Ticks - task.StartDate.ToDateTime(TimeOnly.FromDateTime(DateTime.Now)).Ticks;
+                task.ActualEffort = expectedTime / (DateTime.Now.Ticks - task.StartDate.ToDateTime(TimeOnly.FromDateTime(DateTime.Now)).Ticks);
+                dbContext.SaveChanges();
+
+                return Results.NoContent();
+            });
+
+            tasksGroup.MapPut("{taskId}/cancel", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int projectId, int taskId) =>
+            {
+                var token = TokenDecoder.DecodeToken(httpContext);
+
+                if (token is null)
+                {
+                    return Results.Unauthorized();
+                }
+
+                var role = token.FindFirst("_role").Value;
+
+                var project = dbContext.Projects.Find(projectId);
+
+                if (project is null)
+                {
+                    return Results.NotFound();
+                }
+
+                var managerId = project.ManagerId;
+
+                if (int.Parse(token.FindFirst("_infoId").Value) != managerId ||
+                    role != "project_manager" &&
+                    role != "company")
+                {
+                        return Results.Unauthorized();
+                }
+
+                var task = dbContext.Tasks.Find(taskId);
+                task.Status = "canceled";
                 dbContext.SaveChanges();
 
                 return Results.NoContent();
