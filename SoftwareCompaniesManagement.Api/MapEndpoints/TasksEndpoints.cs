@@ -99,24 +99,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                     role != "project_manager" &&
                     role != "company")
                 {
-                    bool unauthorized = true;
-
-                    if (role == "developer")
-                    {
-                        var infoId = int.Parse(token.FindFirst("_infoId").Value);
-
-                        var developerProject = dbContext.DeveloperProjects.Where(devProj => devProj.DeveloperId == infoId && devProj.ProjectId == projectId).Any();
-
-                        if (!developerProject)
-                        {
-                            unauthorized = false;
-                        }
-                    }
-
-                    if (unauthorized)
-                    {
-                        return Results.Unauthorized();
-                    }
+                    return Results.Unauthorized();
                 }
 
                 var task = tasksMapper.Map<CreateTaskDto, Model.Task>(taskDto);
@@ -128,6 +111,73 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
             });
 
             tasksGroup.MapDelete("{taskId}", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int projectId, int taskId) =>
+            {
+                var token = TokenDecoder.DecodeToken(httpContext);
+
+                if (token is null)
+                {
+                    return Results.Unauthorized();
+                }
+
+                var role = token.FindFirst("_role").Value;
+
+                var project = dbContext.Projects.Find(projectId);
+
+                if (project is null)
+                {
+                    return Results.NotFound();
+                }
+
+                var managerId = project.ManagerId;
+
+                if (int.Parse(token.FindFirst("_infoId").Value) != managerId ||
+                    role != "project_manager" &&
+                    role != "company")
+                {
+                    return Results.Unauthorized();
+                }
+
+                dbContext.Tasks.Where(task => task.Id == taskId).ExecuteDelete();
+                dbContext.SaveChanges();
+
+                return Results.NoContent();
+            });
+
+            tasksGroup.MapPut("{taskId}", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int projectId, int taskId, UpdateTaskDto taskDto) =>
+            {
+                var token = TokenDecoder.DecodeToken(httpContext);
+
+                if (token is null)
+                {
+                    return Results.Unauthorized();
+                }
+
+                var role = token.FindFirst("_role").Value;
+
+                var project = dbContext.Projects.Find(projectId);
+
+                if (project is null)
+                {
+                    return Results.NotFound();
+                }
+
+                var managerId = project.ManagerId;
+
+                if (int.Parse(token.FindFirst("_infoId").Value) != managerId ||
+                    role != "project_manager" &&
+                    role != "company")
+                {
+                        return Results.Unauthorized();
+                }
+
+                var task = dbContext.Tasks.Find(taskId);
+                dbContext.Entry(task).CurrentValues.SetValues(taskDto);
+                dbContext.SaveChanges();
+
+                return Results.NoContent();
+            });
+
+            tasksGroup.MapPut("{taskId}/lock", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int projectId, int taskId) =>
             {
                 var token = TokenDecoder.DecodeToken(httpContext);
 
@@ -171,7 +221,59 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                     }
                 }
 
-                dbContext.Tasks.Where(task => task.Id == taskId).ExecuteDelete();
+                var task = dbContext.Tasks.Find(taskId);
+                task.Status = "started";
+                dbContext.SaveChanges();
+
+                return Results.NoContent();
+            });
+
+            tasksGroup.MapPut("{taskId}/done", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int projectId, int taskId) =>
+            {
+                var token = TokenDecoder.DecodeToken(httpContext);
+
+                if (token is null)
+                {
+                    return Results.Unauthorized();
+                }
+
+                var role = token.FindFirst("_role").Value;
+
+                var project = dbContext.Projects.Find(projectId);
+
+                if (project is null)
+                {
+                    return Results.NotFound();
+                }
+
+                var managerId = project.ManagerId;
+
+                if (int.Parse(token.FindFirst("_infoId").Value) != managerId ||
+                    role != "project_manager" &&
+                    role != "company")
+                {
+                    bool unauthorized = true;
+
+                    if (role == "developer")
+                    {
+                        var infoId = int.Parse(token.FindFirst("_infoId").Value);
+
+                        var developerProject = dbContext.DeveloperProjects.Where(devProj => devProj.DeveloperId == infoId && devProj.ProjectId == projectId).Any();
+
+                        if (!developerProject)
+                        {
+                            unauthorized = false;
+                        }
+                    }
+
+                    if (unauthorized)
+                    {
+                        return Results.Unauthorized();
+                    }
+                }
+
+                var task = dbContext.Tasks.Find(taskId);
+                task.Status = "done";
                 dbContext.SaveChanges();
 
                 return Results.NoContent();
