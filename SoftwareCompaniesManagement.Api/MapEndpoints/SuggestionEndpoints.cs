@@ -62,7 +62,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 var technologies = dbContext.ProjectTechnologies.Where(pt => pt.ProjectId == projectId).Select(pt => pt.TechnologyId);
                 var developers = dbContext.DeveloperTechnologies.Where(dt => technologies.Contains(dt.TechnologyId))
                     .GroupBy(dt => dt.DeveloperId)
-                    .Select(g => new { Id = g.Key, AvgPoints = g.Average(dt => 0.4 * dt.ExperienceYears + 0.6 * experienceMapping(dt.ExperienceLevel)) })
+                    .Select(g => new { Id = g.Key, AvgPoints = g.Average(dt => 0.1 * dt.ExperienceYears + 0.2 * experienceMapping(dt.ExperienceLevel)) + 0.7 * dbContext.Developers.Find(g.Key).Points })
                     .OrderByDescending(g => g.AvgPoints)
                     .Select(g => g.Id)
                     .Select(id => dbContext.Developers.Find(id));

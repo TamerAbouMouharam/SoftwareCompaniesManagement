@@ -18,7 +18,7 @@ public class DeveloperTechnology
 
     public Technology Technology { get; set; } = null!;
 
-    [AllowedValues("freshman", "beginner", "Intermediate", "advanced")]
+    [AllowedValues("freshman", "beginner", "intermediate", "advanced")]
     public required string ExperienceLevel { get; set; }
 
     public double ExperienceYears { get; set; }

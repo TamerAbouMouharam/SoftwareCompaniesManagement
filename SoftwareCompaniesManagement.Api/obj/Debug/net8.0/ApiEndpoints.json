@@ -237,33 +237,6 @@
     ]
   },
   {
-    "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.DevelopersEndpoints\u002B\u003C\u003Ec",
-    "Method": "\u003CMapDevelopersEndpoints\u003Eb__0_5",
-    "RelativePath": "companies/{companyId}/developers/{developerId}",
-    "HttpMethod": "DELETE",
-    "IsController": false,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "companyId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "developerId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.DeveloperTechnologiesEndpoints\u002B\u003C\u003Ec__DisplayClass0_0",
     "Method": "\u003CMapDeveloperTechnologiesEndpoints\u003Eb__1",
     "RelativePath": "companies/{companyId}/developers/{developerId}/technologies/",

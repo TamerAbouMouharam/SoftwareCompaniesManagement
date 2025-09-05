@@ -8,7 +8,7 @@ public record class UpdateDeveloperTechnologyDto(
 
     int TechnologyId,
 
-    [AllowedValues("created", "started", "done", "canceled")]
+    [AllowedValues("freshman", "beginner", "intermediate", "advanced")]
     string ExperienceLevel,
 
     double ExperienceYears,
