@@ -59,7 +59,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                     return Results.Unauthorized();
                 }
 
-                if (int.Parse(token.FindFirst("_infoId").Value) != developerId || 
+                if (int.Parse(token.FindFirst("_companyId").Value) != companyId || 
                     token.FindFirst("_role").Value != "employee_manager" && 
                     token.FindFirst("_role").Value != "company" && 
                     token.FindFirst("_role").Value != "developer")
@@ -107,30 +107,6 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 }
 
                 dbContext.Developers.Entry(developer).CurrentValues.SetValues(dto);
-                dbContext.SaveChanges();
-
-                return Results.NoContent();
-            });
-
-            developersGroup.MapDelete("{developerId}", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int developerId) =>
-            {
-                var token = TokenDecoder.DecodeToken(httpContext);
-
-                if (token is null)
-                {
-                    return Results.Unauthorized();
-                }
-
-                if (int.Parse(token.FindFirst("_infoId").Value) != companyId || 
-                    int.Parse(token.FindFirst("_infoId").Value) != developerId || 
-                    token.FindFirst("_role").Value != "employee_manager" &&
-                    token.FindFirst("_role").Value != "company" &&
-                    token.FindFirst("_role").Value != "developer")
-                {
-                    return Results.Unauthorized();
-                }
-
-                dbContext.Developers.Where(developer => developer.Id == developerId).ExecuteDelete();
                 dbContext.SaveChanges();
 
                 return Results.NoContent();
