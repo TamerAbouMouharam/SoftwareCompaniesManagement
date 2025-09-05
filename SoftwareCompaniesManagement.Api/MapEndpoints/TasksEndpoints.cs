@@ -323,7 +323,9 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 var task = dbContext.Tasks.Find(taskId);
                 if(task.Status == "done")
                 {
-                    double? addedPoints = 0.5 * task.Priority + 0.3 * task.Complexity + 0.2 * task.ActualEffort;
+                    var numTask = dbContext.Tasks.Where(task => task.ProjectId == projectId).Count();
+                    var projectPoints = dbContext.Projects.Where(project => project.Id == projectId).Select(project => project.ProjectPoints).First();
+                    double? addedPoints = 0.5 * task.Priority + 0.3 * task.Complexity + 0.2 * task.ActualEffort + projectPoints / numTask;
                     var developer = dbContext.Developers.Find(task.DeveloperId);
                     developer.Points += (double)addedPoints;
                 }
