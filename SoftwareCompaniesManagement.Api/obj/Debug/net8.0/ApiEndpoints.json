@@ -917,5 +917,43 @@
       }
     ],
     "EndpointName": "GetCompany"
+  },
+  {
+    "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.TechnologiesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapTechnologiesEndpoints\u003Eb__0_1",
+    "RelativePath": "technologies",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.TechnologiesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapTechnologiesEndpoints\u003Eb__0_0",
+    "RelativePath": "technologies/{technologyId}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "technologyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

@@ -34,7 +34,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                     return Results.Unauthorized();
                 }
 
-                if (int.Parse(token.FindFirst("_infoId").Value) != developerId ||
+                if (int.Parse(token.FindFirst("_companyId").Value) != companyId ||
                     token.FindFirst("_role").Value != "developer" &&
                     token.FindFirst("_role").Value != "project_manager" &&
                     token.FindFirst("_role").Value != "company")
@@ -56,7 +56,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                     return Results.Unauthorized();
                 }
 
-                if (int.Parse(token.FindFirst("_infoId").Value) != developerId ||
+                if (int.Parse(token.FindFirst("_companyId").Value) != companyId ||
                     token.FindFirst("_role").Value != "developer" &&
                     token.FindFirst("_role").Value != "project_manager" &&
                     token.FindFirst("_role").Value != "company")
