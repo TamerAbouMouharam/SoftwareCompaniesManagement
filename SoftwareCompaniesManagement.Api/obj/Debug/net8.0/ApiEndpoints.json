@@ -705,45 +705,8 @@
   },
   {
     "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.TasksEndpoints\u002B\u003C\u003Ec",
-    "Method": "\u003CMapTasksEndpoints\u003Eb__0_4",
-    "RelativePath": "companies/{companyId}/projects/{projectId}/tasks/{taskId}",
-    "HttpMethod": "PUT",
-    "IsController": false,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "companyId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "projectId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "taskId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "taskDto",
-        "Type": "SoftwareCompaniesManagement.Api.DTO.UpdateDto.UpdateTaskDto",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.TasksEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapTasksEndpoints\u003Eb__0_7",
-    "RelativePath": "companies/{companyId}/projects/{projectId}/tasks/{taskId}/cancel",
+    "RelativePath": "companies/{companyId}/projects/{projectId}/tasks/{taskId}/accept",
     "HttpMethod": "PUT",
     "IsController": false,
     "Order": 0,
@@ -775,7 +738,7 @@
   {
     "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.TasksEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapTasksEndpoints\u003Eb__0_6",
-    "RelativePath": "companies/{companyId}/projects/{projectId}/tasks/{taskId}/done",
+    "RelativePath": "companies/{companyId}/projects/{projectId}/tasks/{taskId}/cancel",
     "HttpMethod": "PUT",
     "IsController": false,
     "Order": 0,
@@ -807,6 +770,38 @@
   {
     "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.TasksEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapTasksEndpoints\u003Eb__0_5",
+    "RelativePath": "companies/{companyId}/projects/{projectId}/tasks/{taskId}/done",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "projectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "taskId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SoftwareCompaniesManagement.Api.MapEndpoints.TasksEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapTasksEndpoints\u003Eb__0_4",
     "RelativePath": "companies/{companyId}/projects/{projectId}/tasks/{taskId}/lock",
     "HttpMethod": "PUT",
     "IsController": false,

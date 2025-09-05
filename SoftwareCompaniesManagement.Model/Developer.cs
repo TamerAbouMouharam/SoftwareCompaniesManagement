@@ -16,6 +16,8 @@ public class Developer
 
     public DateOnly HiringDate { get; set; }
 
+    public double Points { get; set; } = 0;
+
     [ForeignKey("Account")]
     public int AccountId { get; set; }
 
