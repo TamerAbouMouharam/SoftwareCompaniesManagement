@@ -314,20 +314,59 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 var managerId = project.ManagerId;
 
                 if (int.Parse(token.FindFirst("_infoId").Value) != managerId ||
-                    role != "project_manager" &&
-                    role != "company")
+                    role != "project_manager")
                 {
                     return Results.Unauthorized();
                 }
 
                 var task = dbContext.Tasks.Find(taskId);
-                if(task.Status == "done")
+                if (task.Status == "done")
                 {
                     var numTask = dbContext.Tasks.Where(task => task.ProjectId == projectId).Count();
                     var projectPoints = dbContext.Projects.Where(project => project.Id == projectId).Select(project => project.ProjectPoints).First();
                     double? addedPoints = 0.5 * task.Priority + 0.3 * task.Complexity + 0.2 * task.ActualEffort + projectPoints / numTask;
                     var developer = dbContext.Developers.Find(task.DeveloperId);
                     developer.Points += (double)addedPoints;
+                }
+                else
+                {
+                    return Results.Conflict();
+                }
+                dbContext.SaveChanges();
+
+                return Results.NoContent();
+            });
+
+            tasksGroup.MapPut("{taskId}/reject", (CompaniesContext dbContext, HttpContext httpContext, int companyId, int projectId, int taskId) =>
+            {
+                var token = TokenDecoder.DecodeToken(httpContext);
+
+                if (token is null)
+                {
+                    return Results.Unauthorized();
+                }
+
+                var role = token.FindFirst("_role").Value;
+
+                var project = dbContext.Projects.Find(projectId);
+
+                if (project is null)
+                {
+                    return Results.NotFound();
+                }
+
+                var managerId = project.ManagerId;
+
+                if (int.Parse(token.FindFirst("_infoId").Value) != managerId ||
+                    role != "project_manager")
+                {
+                    return Results.Unauthorized();
+                }
+
+                var task = dbContext.Tasks.Find(taskId);
+                if (task.Status == "done")
+                {
+                    task.Status = "created";
                 }
                 else
                 {

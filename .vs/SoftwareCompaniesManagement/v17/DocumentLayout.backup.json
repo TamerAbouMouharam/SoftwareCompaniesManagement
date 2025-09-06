@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\projectsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\projectsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\technologiesendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\technologiesendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,10 +27,6 @@
       "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\tasksendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\projectsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\projectsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\suggestionendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\suggestionendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +46,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\Program.cs",
               "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\Program.cs",
@@ -54,25 +54,23 @@
               "RelativeToolTip": "SoftwareCompaniesManagement.Api\\Program.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAAACYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T16:09:53.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-05T16:09:53.01Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TechnologiesEndpoints.cs",
               "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\TechnologiesEndpoints.cs",
               "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\MapEndpoints\\TechnologiesEndpoints.cs",
-              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\TechnologiesEndpoints.cs*",
-              "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\TechnologiesEndpoints.cs*",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\TechnologiesEndpoints.cs",
+              "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\TechnologiesEndpoints.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T16:00:18.383Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-05T16:00:18.383Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DeveloperTechnologiesEndpoints.cs",
               "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\DeveloperTechnologiesEndpoints.cs",
               "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\MapEndpoints\\DeveloperTechnologiesEndpoints.cs",
@@ -80,12 +78,11 @@
               "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\DeveloperTechnologiesEndpoints.cs",
               "ViewState": "AgIAAEgAAAAAAAAAAAAAACQAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T15:58:52.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-05T15:58:52.359Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DevelopersEndpoints.cs",
               "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\DevelopersEndpoints.cs",
               "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\MapEndpoints\\DevelopersEndpoints.cs",
@@ -93,24 +90,24 @@
               "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\DevelopersEndpoints.cs",
               "ViewState": "AgIAAFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T15:58:05.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-05T15:58:05.521Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "ProjectsEndpoints.cs",
               "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
               "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
               "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
               "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T14:22:36.268Z"
+              "WhenOpened": "2025-09-05T14:22:36.268Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "TasksEndpoints.cs",
               "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\TasksEndpoints.cs",
               "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\MapEndpoints\\TasksEndpoints.cs",
@@ -118,8 +115,7 @@
               "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\TasksEndpoints.cs",
               "ViewState": "AgIAADsBAAAAAAAAAAAwwEYBAACVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T14:20:28.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-05T14:20:28.376Z"
             },
             {
               "$type": "Document",

@@ -110,7 +110,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 var role = token.FindFirst("_role").Value;
                 var sentCompanyId = token.FindFirst("_companyId").Value;
 
-                if (role != "company" && role != "project_manager" || int.Parse(sentCompanyId) != companyId)
+                if (role != "project_manager" || int.Parse(sentCompanyId) != companyId)
                 {
                     return Results.Unauthorized();
                 }
@@ -173,6 +173,13 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 var sentCompanyId = token.FindFirst("_companyId").Value;
 
                 if (role != "company" && role != "project_manager" || int.Parse(sentCompanyId) != companyId)
+                {
+                    return Results.Unauthorized();
+                }
+
+                var project = dbContext.Projects.Where(project => project.Id == projectId);
+
+                if (role == "project_manager" && int.Parse(token.FindFirst("_infoId").Value) != project.FirstOrDefault().ManagerId)
                 {
                     return Results.Unauthorized();
                 }
