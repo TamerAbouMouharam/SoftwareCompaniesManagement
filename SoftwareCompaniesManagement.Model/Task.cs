@@ -17,7 +17,7 @@ public class Task
 
     public int Complexity { get; set; }
 
-    [AllowedValues("created", "started", "done", "canceled")]
+    [AllowedValues("created", "started", "done", "accepted", "canceled")]
     public required string Status { get; set; }
 
     public DateOnly StartDate { get; set; }

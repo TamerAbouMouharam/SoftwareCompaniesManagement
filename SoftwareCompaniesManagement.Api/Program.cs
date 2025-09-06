@@ -37,5 +37,7 @@ app.MapDeveloperTechnologiesEndpoints();
 app.MapProjectTechnologiesEndpoints();
 app.MapTasksEndpoints();
 app.MapTechnologiesEndpoints();
+app.MapDeveloperProjectsEndpoints();
+app.MapSuggestionEndpoints();
 
 app.Run();

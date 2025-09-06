@@ -26,7 +26,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
 
         public static RouteGroupBuilder MapSuggestionEndpoints(this WebApplication app)
         {
-            var suggestionGroup = app.MapGroup("companies/{companyId}/projects/{projectId}/suggest");
+            var suggestionGroup = app.MapGroup("companies/{companyId}/projects/{projectId}/suggest").WithParameterValidation();
 
             var mapperConfiguration = new MapperConfiguration(cfg =>
             {

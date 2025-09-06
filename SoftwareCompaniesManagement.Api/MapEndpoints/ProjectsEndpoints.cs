@@ -14,7 +14,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
     {
         public static RouteGroupBuilder MapProjectsEndpoints(this WebApplication app)
         {
-            var projectsGroup = app.MapGroup("companies/{companyId}/projects");
+            var projectsGroup = app.MapGroup("companies/{companyId}/projects").WithParameterValidation();
 
             var mapperConfiguration = new MapperConfiguration(cfg =>
             {

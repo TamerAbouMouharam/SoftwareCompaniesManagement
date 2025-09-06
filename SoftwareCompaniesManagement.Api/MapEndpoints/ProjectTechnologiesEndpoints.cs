@@ -13,7 +13,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
     {
         public static RouteGroupBuilder MapProjectTechnologiesEndpoints(this WebApplication app)
         {
-            var projectTechnologiesGroup = app.MapGroup("companies/{companyId}/projects/{projectId}/technologies");
+            var projectTechnologiesGroup = app.MapGroup("companies/{companyId}/projects/{projectId}/technologies").WithParameterValidation();
 
             var mapperConfiguration = new MapperConfiguration(cfg =>
             {

@@ -13,7 +13,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
     {
         public static RouteGroupBuilder MapTasksEndpoints(this WebApplication app)
         {
-            var tasksGroup = app.MapGroup("companies/{companyId}/projects/{projectId}/tasks");
+            var tasksGroup = app.MapGroup("companies/{companyId}/projects/{projectId}/tasks").WithParameterValidation();
 
             var mapperConfiguration = new MapperConfiguration(cfg =>
             {
@@ -327,6 +327,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                     double? addedPoints = 0.5 * task.Priority + 0.3 * task.Complexity + 0.2 * task.ActualEffort + projectPoints / numTask;
                     var developer = dbContext.Developers.Find(task.DeveloperId);
                     developer.Points += (double)addedPoints;
+                    task.Status = "accepted";
                 }
                 else
                 {
