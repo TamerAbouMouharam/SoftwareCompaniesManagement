@@ -40,7 +40,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 var role = token.FindFirst("_role").Value;
                 var sentCompanyId = token.FindFirst("_companyId").Value;
 
-                if (role != "company" && role != "project_manager" || int.Parse(sentCompanyId) != companyId)
+                if (role != "company" && role != "project_manager" && role != "developer" || int.Parse(sentCompanyId) != companyId)
                 {
                     return Results.Unauthorized();
                 }

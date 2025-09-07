@@ -59,7 +59,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
 
                         var developerProject = dbContext.DeveloperProjects.Where(devProj => devProj.DeveloperId == infoId && devProj.ProjectId == projectId).Any();
 
-                        if (!developerProject)
+                        if (developerProject)
                         {
                             unauthorized = false;
                         }
@@ -177,7 +177,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
 
                     var developerProject = dbContext.DeveloperProjects.Where(devProj => devProj.DeveloperId == infoId && devProj.ProjectId == projectId).Any();
 
-                    if (!developerProject)
+                    if (developerProject)
                     {
                         unauthorized = false;
                     }
@@ -232,7 +232,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
 
                     var developerProject = dbContext.DeveloperProjects.Where(devProj => devProj.DeveloperId == infoId && devProj.ProjectId == projectId).Any();
 
-                    if (!developerProject)
+                    if (developerProject)
                     {
                         unauthorized = false;
                     }
@@ -249,8 +249,10 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 if (task.Status == "started")
                 {
                     task.Status = "done";
-                    var expectedTime = task.EndDate.ToDateTime(TimeOnly.FromDateTime(DateTime.Now)).Ticks - task.StartDate.ToDateTime(TimeOnly.FromDateTime(DateTime.Now)).Ticks;
-                    task.ActualEffort = expectedTime / (DateTime.Now.Ticks - task.StartDate.ToDateTime(TimeOnly.FromDateTime(DateTime.Now)).Ticks);
+                    var end = task.EndDate.ToDateTime(TimeOnly.FromDateTime(DateTime.Now)).Ticks;
+                    var start = task.StartDate.ToDateTime(TimeOnly.FromDateTime(DateTime.Now)).Ticks;
+                    var expectedTime = end - start;
+                    task.ActualEffort = expectedTime / (DateTime.Now.Ticks - start);
                     dbContext.SaveChanges();
                 }
                 else
@@ -326,7 +328,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 {
                     var numTask = dbContext.Tasks.Where(task => task.ProjectId == projectId).Count();
                     var projectPoints = dbContext.Projects.Where(project => project.Id == projectId).Select(project => project.ProjectPoints).First();
-                    double? addedPoints = 0.5 * task.Priority + 0.3 * task.Complexity + 0.2 * task.ActualEffort + projectPoints / numTask;
+                    double? addedPoints = 0.5 * task.Priority + 0.3 * task.Complexity + 0.2 * (task.EstimateEffort - task.ActualEffort) + projectPoints / numTask;
                     var developer = dbContext.Developers.Find(task.DeveloperId);
                     developer.Points += (double)addedPoints;
                     task.Status = "accepted";
