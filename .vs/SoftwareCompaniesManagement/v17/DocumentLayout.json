@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\developerprojectsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\developerprojectsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\tasksendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\tasksendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\dto\\createdto\\createdeveloperprojectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\dto\\createdto\\createdeveloperprojectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\data\\companiescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\data\\companiescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\projectsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\projectsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\data\\migrations\\companiescontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\data\\migrations\\companiescontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\data\\migrations\\20250907082005_finishing.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\data\\migrations\\20250907082005_finishing.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\data\\migrations\\20241114170822_initialdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\data\\migrations\\20241114170822_initialdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +38,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreateDeveloperProjectDto.cs",
-              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\DTO\\CreateDto\\CreateDeveloperProjectDto.cs",
-              "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\DTO\\CreateDto\\CreateDeveloperProjectDto.cs",
-              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\DTO\\CreateDto\\CreateDeveloperProjectDto.cs",
-              "RelativeToolTip": "SoftwareCompaniesManagement.Api\\DTO\\CreateDto\\CreateDeveloperProjectDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T15:58:45.372Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ProjectsEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
-              "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
-              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
-              "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAFQAAAApAAAAAAAAAA==",
+              "Title": "CompaniesContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\Data\\Migrations\\CompaniesContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\Data\\Migrations\\CompaniesContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\Data\\Migrations\\CompaniesContextModelSnapshot.cs",
+              "RelativeToolTip": "SoftwareCompaniesManagement.Api\\Data\\Migrations\\CompaniesContextModelSnapshot.cs",
+              "ViewState": "AgIAANcBAAAAAAAAAAAAAO8BAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T15:47:08.467Z",
+              "WhenOpened": "2025-09-07T08:51:03.319Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DeveloperProjectsEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\DeveloperProjectsEndpoints.cs",
-              "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\MapEndpoints\\DeveloperProjectsEndpoints.cs",
-              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\DeveloperProjectsEndpoints.cs",
-              "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\DeveloperProjectsEndpoints.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAwwFQAAAAoAAAAAAAAAA==",
+              "Title": "TasksEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\TasksEndpoints.cs",
+              "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\MapEndpoints\\TasksEndpoints.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\TasksEndpoints.cs",
+              "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\TasksEndpoints.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAowHMAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T15:47:02.164Z",
+              "WhenOpened": "2025-09-07T08:31:46.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20250907082005_Finishing.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\Data\\Migrations\\20250907082005_Finishing.Designer.cs",
+              "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\Data\\Migrations\\20250907082005_Finishing.Designer.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\Data\\Migrations\\20250907082005_Finishing.Designer.cs",
+              "RelativeToolTip": "SoftwareCompaniesManagement.Api\\Data\\Migrations\\20250907082005_Finishing.Designer.cs",
+              "ViewState": "AgIAANEBAAAAAAAAAAAAAPsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T08:29:32.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CompaniesContext.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\Data\\CompaniesContext.cs",
+              "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\Data\\CompaniesContext.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\Data\\CompaniesContext.cs",
+              "RelativeToolTip": "SoftwareCompaniesManagement.Api\\Data\\CompaniesContext.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAowB8AAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T08:29:12.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20241114170822_InitialDemo.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\Data\\Migrations\\20241114170822_InitialDemo.cs",
+              "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\Data\\Migrations\\20241114170822_InitialDemo.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\Data\\Migrations\\20241114170822_InitialDemo.cs",
+              "RelativeToolTip": "SoftwareCompaniesManagement.Api\\Data\\Migrations\\20241114170822_InitialDemo.cs",
+              "ViewState": "AgIAAPYAAAAAAAAAAAAAAG4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T08:47:19.543Z",
               "EditorCaption": ""
             }
           ]

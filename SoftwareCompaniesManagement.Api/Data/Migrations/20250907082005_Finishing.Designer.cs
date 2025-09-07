@@ -2,17 +2,20 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SoftwareCompaniesManagement.Api.Data;
 
 #nullable disable
 
-namespace SoftwareCompaniesManagement.Api.Data.Migrations
+namespace SoftwareCompaniesManagement.Api.data.Migrations
 {
     [DbContext(typeof(CompaniesContext))]
-    partial class CompaniesContextModelSnapshot : ModelSnapshot
+    [Migration("20250907082005_Finishing")]
+    partial class Finishing
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.10");
@@ -251,7 +254,7 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("DeveloperId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("INTEGER").IsRequired(false);
 
                     b.Property<DateOnly>("EndDate")
                         .HasColumnType("TEXT");
@@ -488,12 +491,6 @@ namespace SoftwareCompaniesManagement.Api.Data.Migrations
                         .HasForeignKey("TechnologyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("SoftwareCompaniesManagement.Model.Developer", "Developer")
-                        .WithMany()
-                        .HasForeignKey("DeveloperId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired(false);
 
                     b.Navigation("Developer");
 

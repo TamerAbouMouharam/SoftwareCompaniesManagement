@@ -58,16 +58,21 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 {
                     return Results.Unauthorized();
                 }
+                Console.WriteLine("Error HERE");
 
-                var technologies = dbContext.ProjectTechnologies.Where(pt => pt.ProjectId == projectId).Select(pt => pt.TechnologyId);
-                var developers = dbContext.DeveloperTechnologies.Where(dt => technologies.Contains(dt.TechnologyId))
+                var technologyIds = dbContext.ProjectTechnologies.Where(pt => pt.ProjectId == projectId).Select(pt => pt.TechnologyId);
+                var developerExpMeasure = dbContext.DeveloperTechnologies.Where(dt => technologyIds.Contains(dt.TechnologyId)).ToList()
                     .GroupBy(dt => dt.DeveloperId)
-                    .Select(g => new { Id = g.Key, AvgPoints = g.Average(dt => 0.1 * dt.ExperienceYears + 0.2 * experienceMapping(dt.ExperienceLevel)) + 0.7 * dbContext.Developers.Find(g.Key).Points })
-                    .OrderByDescending(g => g.AvgPoints)
-                    .Select(g => g.Id)
-                    .Select(id => dbContext.Developers.Find(id));
+                    .Select(g => new {Id = g.Key, Exp = 0.3 * g.Average(dt => dt.ExperienceYears + experienceMapping(dt.ExperienceLevel))}).ToList();
 
-                return Results.Ok(developers.Select(developerMapper.Map<Developer, DeveloperDto>));
+                List<dynamic> developerIds = new();
+                foreach (var dem in developerExpMeasure)
+                {
+                    var devId = new { dem.Id, Score = dem.Exp + 0.7 * dbContext.Developers.Find(dem.Id).Points };
+                    developerIds.Add(devId);
+                }
+
+                return Results.Ok(developerIds.OrderByDescending(d => d.Score));
             });
 
             return suggestionGroup;

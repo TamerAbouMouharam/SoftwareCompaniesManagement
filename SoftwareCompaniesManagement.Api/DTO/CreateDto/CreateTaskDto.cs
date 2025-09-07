@@ -32,7 +32,6 @@ public record class CreateTaskDto(
 
     double ActualEffort,
 
-    [Required]
     int DeveloperId,
 
     [Required]

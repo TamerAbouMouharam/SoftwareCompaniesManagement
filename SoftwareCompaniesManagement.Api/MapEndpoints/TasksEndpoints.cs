@@ -110,6 +110,8 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
 
                 var task = tasksMapper.Map<CreateTaskDto, Model.Task>(taskDto);
 
+                task.DeveloperId = null;
+
                 dbContext.Tasks.Add(task);
                 dbContext.SaveChanges();
 
