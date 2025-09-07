@@ -58,7 +58,6 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 {
                     return Results.Unauthorized();
                 }
-                Console.WriteLine("Error HERE");
 
                 var technologyIds = dbContext.ProjectTechnologies.Where(pt => pt.ProjectId == projectId).Select(pt => pt.TechnologyId);
                 var developerExpMeasure = dbContext.DeveloperTechnologies.Where(dt => technologyIds.Contains(dt.TechnologyId)).ToList()
@@ -69,7 +68,13 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 foreach (var dem in developerExpMeasure)
                 {
                     var devId = new { dem.Id, Score = dem.Exp + 0.7 * dbContext.Developers.Find(dem.Id).Points };
-                    developerIds.Add(devId);
+
+                    var devTemp = dbContext.Developers.Find(dem.Id);
+
+                    if (devTemp.CompanyId == companyId)
+                    {
+                        developerIds.Add(devId);
+                    }
                 }
 
                 return Results.Ok(developerIds.OrderByDescending(d => d.Score));
