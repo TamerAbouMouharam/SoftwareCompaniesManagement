@@ -15,7 +15,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                     return 1;
                 case "beginner":
                     return 2;
-                case "Intermediate":
+                case "intermediate":
                     return 3;
                 case "advanced":
                     return 4;

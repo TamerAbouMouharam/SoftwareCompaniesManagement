@@ -246,10 +246,11 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 if (task.Status == "started")
                 {
                     task.Status = "done";
-                    var end = task.EndDate.ToDateTime(TimeOnly.FromDateTime(DateTime.Now)).Ticks;
-                    var start = task.StartDate.ToDateTime(TimeOnly.FromDateTime(DateTime.Now)).Ticks;
+                    var now = DateTime.Now;
+                    var end = task.EndDate.ToDateTime(TimeOnly.FromDateTime(now)).Ticks;
+                    var start = task.StartDate.ToDateTime(TimeOnly.FromDateTime(now)).Ticks;
                     var expectedTime = end - start;
-                    task.ActualEffort = expectedTime / (DateTime.Now.Ticks - start);
+                    task.ActualEffort = expectedTime / (now.Ticks - start);
                     dbContext.SaveChanges();
                 }
                 else

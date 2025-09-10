@@ -4173,11 +4173,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj",
+      "projectUniqueName": "C:\\Users\\Tamer\\Desktop\\تجهيز المشروع\\التطبيق العملي\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj",
       "projectName": "SoftwareCompaniesManagement.Authorization",
-      "projectPath": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj",
+      "projectPath": "C:\\Users\\Tamer\\Desktop\\تجهيز المشروع\\التطبيق العملي\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj",
       "packagesPath": "C:\\Users\\Tamer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\obj\\",
+      "outputPath": "C:\\Users\\Tamer\\Desktop\\تجهيز المشروع\\التطبيق العملي\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

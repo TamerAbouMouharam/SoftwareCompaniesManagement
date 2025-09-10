@@ -1,29 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\",
+  "WorkspaceRootPath": "C:\\Users\\Tamer\\Desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\SoftwareCompaniesManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\projectsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\projectsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FAE94CBB-5C35-4654-A358-5536B3BB0CEC}|SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.authorization\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAE94CBB-5C35-4654-A358-5536B3BB0CEC}|SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj|solutionrelative:softwarecompaniesmanagement.authorization\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\tasksendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\tasksendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\tasksendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\suggestionendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\suggestionendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\suggestionendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\companiesendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\projectsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\projectsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAE94CBB-5C35-4654-A358-5536B3BB0CEC}|SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj|c:\\users\\tamer\\desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\softwarecompaniesmanagement\\softwarecompaniesmanagement.authorization\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAE94CBB-5C35-4654-A358-5536B3BB0CEC}|SoftwareCompaniesManagement.Authorization\\SoftwareCompaniesManagement.Authorization.csproj|solutionrelative:softwarecompaniesmanagement.authorization\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\companiesendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\companiesendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\theproject\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\accountsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|c:\\users\\tamer\\desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\softwarecompaniesmanagement\\softwarecompaniesmanagement.api\\mapendpoints\\accountsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD1F141D-30C8-4CB5-BC69-CC1D4A2CA58A}|SoftwareCompaniesManagement.Api\\SoftwareCompaniesManagement.Api.csproj|solutionrelative:softwarecompaniesmanagement.api\\mapendpoints\\accountsendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,81 +42,76 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\Program.cs",
               "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Authorization\\Program.cs",
-              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\Program.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Authorization\\Program.cs",
               "RelativeToolTip": "SoftwareCompaniesManagement.Authorization\\Program.cs",
               "ViewState": "AgIAAHcAAAAAAAAAAAAowLIAAACkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T17:10:47.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T17:10:47.598Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "TasksEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\TasksEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\TasksEndpoints.cs",
               "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\MapEndpoints\\TasksEndpoints.cs",
-              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\TasksEndpoints.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\TasksEndpoints.cs",
               "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\TasksEndpoints.cs",
-              "ViewState": "AgIAAGIBAAAAAAAAAAAAAIsAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAYwPwAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-09T15:23:48.043Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "SuggestionEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\SuggestionEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\SuggestionEndpoints.cs",
               "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\MapEndpoints\\SuggestionEndpoints.cs",
-              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\SuggestionEndpoints.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\SuggestionEndpoints.cs",
               "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\SuggestionEndpoints.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAE0AAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T15:21:05.686Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T15:21:05.686Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ProjectsEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
               "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
-              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
               "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\ProjectsEndpoints.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADcAAAB9AAAAAAAAAA==",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAADcAAAB9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T15:18:56.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T15:18:56.5Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "CompaniesEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\CompaniesEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\CompaniesEndpoints.cs",
               "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\MapEndpoints\\CompaniesEndpoints.cs",
-              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\CompaniesEndpoints.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\CompaniesEndpoints.cs",
               "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\CompaniesEndpoints.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T15:18:53.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T15:18:53.708Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "AccountsEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\AccountsEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\Tamer\\Desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\AccountsEndpoints.cs",
               "RelativeDocumentMoniker": "SoftwareCompaniesManagement.Api\\MapEndpoints\\AccountsEndpoints.cs",
-              "ToolTip": "C:\\Users\\Tamer\\Desktop\\TheProject\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\AccountsEndpoints.cs",
+              "ToolTip": "C:\\Users\\Tamer\\Desktop\\\u062A\u062C\u0647\u064A\u0632 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\\\u0627\u0644\u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0639\u0645\u0644\u064A\\SoftwareCompaniesManagement\\SoftwareCompaniesManagement.Api\\MapEndpoints\\AccountsEndpoints.cs",
               "RelativeToolTip": "SoftwareCompaniesManagement.Api\\MapEndpoints\\AccountsEndpoints.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T15:17:55.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T15:17:55.531Z"
             }
           ]
         },
