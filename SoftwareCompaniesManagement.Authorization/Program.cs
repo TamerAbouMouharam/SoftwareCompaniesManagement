@@ -176,7 +176,7 @@ app.MapGet("{companyId}/activated", (AccountsContext dbContext, HttpContext http
         return Results.Unauthorized();
     }
 
-    var accounts = dbContext.Accounts.Where(account => account.CompanyId == int.Parse(tokenCompanyId)).Where(account => account.IsActive).ToList();
+    var accounts = dbContext.Accounts.Where(account => account.CompanyId == int.Parse(tokenCompanyId)).Where(account => account.IsActive && account.Role != "company").ToList();
 
     return Results.Ok(accounts);
 });

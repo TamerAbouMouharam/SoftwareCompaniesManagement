@@ -48,8 +48,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 var managerId = project.ManagerId;
 
                 if (int.Parse(token.FindFirst("_infoId").Value) != managerId ||
-                    role != "project_manager" &&
-                    role != "company")
+                    role != "project_manager")
                 {
                     bool unauthorized = true;
 
@@ -102,8 +101,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 var managerId = project.ManagerId;
 
                 if (int.Parse(token.FindFirst("_infoId").Value) != managerId ||
-                    role != "project_manager" &&
-                    role != "company")
+                    role != "project_manager")
                 {
                     return Results.Unauthorized();
                 }
@@ -139,8 +137,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 var managerId = project.ManagerId;
 
                 if (int.Parse(token.FindFirst("_infoId").Value) != managerId ||
-                    role != "project_manager" &&
-                    role != "company")
+                    role != "project_manager")
                 {
                     return Results.Unauthorized();
                 }

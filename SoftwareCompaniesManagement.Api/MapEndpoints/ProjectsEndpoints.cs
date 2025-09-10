@@ -53,7 +53,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
 
                     var developerProjects = dbContext.DeveloperProjects.Where(devProj => devProj.DeveloperId == infoId).Select(devProj => devProj.ProjectId).ToList();
 
-                    projects = projects.Where(project => developerProjects.Contains(project.Id));
+                    projects = projects.Where(project => developerProjects.Contains(project.Id) && project.Status == "started");
                 }
 
                 return Results.Ok(projects.ToList().Select(projectMapper.Map<Project, ProjectDto>).ToList());
@@ -138,7 +138,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 var role = token.FindFirst("_role").Value;
                 var sentCompanyId = token.FindFirst("_companyId").Value;
 
-                if (role != "company" && role != "project_manager" || int.Parse(sentCompanyId) != companyId)
+                if (role != "project_manager" || int.Parse(sentCompanyId) != companyId)
                 {
                     return Results.Unauthorized();
                 }
@@ -172,7 +172,7 @@ namespace SoftwareCompaniesManagement.Api.MapEndpoints
                 var role = token.FindFirst("_role").Value;
                 var sentCompanyId = token.FindFirst("_companyId").Value;
 
-                if (role != "company" && role != "project_manager" || int.Parse(sentCompanyId) != companyId)
+                if (role != "project_manager" || int.Parse(sentCompanyId) != companyId)
                 {
                     return Results.Unauthorized();
                 }
